@@ -72,5 +72,10 @@ namespace Library_management
         {
             this.Close();
         }
+
+        private void LibraryBorrow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

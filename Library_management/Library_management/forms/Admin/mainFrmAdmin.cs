@@ -74,6 +74,13 @@ namespace Library_management.forms.Admin
         private void mainFrmAdmin_Load(object sender, EventArgs e)
         {
             lbAmountBook.Text = bookDB.getList().Count.ToString();
+            lbAmountBorrow.Text = borrowDB.getList().Count.ToString();
+            lbAmountTeacher.Text = teacherDB.getListTeacher().Count.ToString();
+            lbAmountStudent.Text = studentDB.getListStd().Count.ToString();
+            lbAmountStaff.Text = staffDB.getListInStaff().Count.ToString();
+            //lbAmountReturn.Text = 
+            lbAmountLibraryBorrow.Text = bookDB.getListBookOfTeacher().Count.ToString();
+           
         }
 
         private void btnLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

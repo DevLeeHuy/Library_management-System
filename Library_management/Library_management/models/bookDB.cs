@@ -140,6 +140,23 @@ namespace Library_management.models
             catch (Exception ex)
             { }
         }
+        public static List<book> getListBookOfTeacher()
+        {
+            var rs = from b in db.books
+                     join bot in db.bookOfTeachers
+                     on b.id equals bot.bid
+                     select b;
+            return rs.ToList();
+        }
+        public static List<book> getListBookOfTeacherById(int tid)
+        {
+            var rs = from b in db.books
+                     join bot in db.bookOfTeachers
+                     on b.id equals bot.bid
+                     where bot.tid == tid
+                     select b;
+            return rs.ToList();
+        }
         public static int getIdByTitle(string title)
         {
             book b = db.books.Where(p => p.title == title).SingleOrDefault();
