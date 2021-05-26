@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="accounts" EntityType="LibraryModel.account" />
+    <EntitySet Name="books" EntityType="LibraryModel.book" />
+    <EntitySet Name="bookCategories" EntityType="LibraryModel.bookCategory" />
+    <EntitySet Name="bookOfTeachers" EntityType="LibraryModel.bookOfTeacher" />
+    <EntitySet Name="borrows" EntityType="LibraryModel.borrow" />
+    <EntitySet Name="returnBooks" EntityType="LibraryModel.returnBook" />
+    <EntitySet Name="shifts" EntityType="LibraryModel.shift" />
+    <EntitySet Name="staffs" EntityType="LibraryModel.staff" />
+    <EntitySet Name="staffRoles" EntityType="LibraryModel.staffRole" />
+    <EntitySet Name="users" EntityType="LibraryModel.user" />
+    <EntitySet Name="userTypes" EntityType="LibraryModel.userType" />
+    <AssociationSet Name="FK__account__id__38996AB5" Association="LibraryModel.FK__account__id__38996AB5">
+      <End Role="user" EntitySet="users" />
+      <End Role="account" EntitySet="accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__book__categoryId__47DBAE45" Association="LibraryModel.FK__book__categoryId__47DBAE45">
+      <End Role="bookCategory" EntitySet="bookCategories" />
+      <End Role="book" EntitySet="books" />
+    </AssociationSet>
+    <AssociationSet Name="FK__bookOfTeach__bid__656C112C" Association="LibraryModel.FK__bookOfTeach__bid__656C112C">
+      <End Role="book" EntitySet="books" />
+      <End Role="bookOfTeacher" EntitySet="bookOfTeachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__borrow__bid__5DCAEF64" Association="LibraryModel.FK__borrow__bid__5DCAEF64">
+      <End Role="book" EntitySet="books" />
+      <End Role="borrow" EntitySet="borrows" />
+    </AssociationSet>
+    <AssociationSet Name="FK__returnBook__bid__619B8048" Association="LibraryModel.FK__returnBook__bid__619B8048">
+      <End Role="book" EntitySet="books" />
+      <End Role="returnBook" EntitySet="returnBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__bookOfTeach__tid__6477ECF3" Association="LibraryModel.FK__bookOfTeach__tid__6477ECF3">
+      <End Role="user" EntitySet="users" />
+      <End Role="bookOfTeacher" EntitySet="bookOfTeachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__borrow__uid__5CD6CB2B" Association="LibraryModel.FK__borrow__uid__5CD6CB2B">
+      <End Role="user" EntitySet="users" />
+      <End Role="borrow" EntitySet="borrows" />
+    </AssociationSet>
+    <AssociationSet Name="FK__returnBook__uid__60A75C0F" Association="LibraryModel.FK__returnBook__uid__60A75C0F">
+      <End Role="user" EntitySet="users" />
+      <End Role="returnBook" EntitySet="returnBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__shifts__sid__7E37BEF6" Association="LibraryModel.FK__shifts__sid__7E37BEF6">
+      <End Role="staff" EntitySet="staffs" />
+      <End Role="shift" EntitySet="shifts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__staff__id__74AE54BC" Association="LibraryModel.FK__staff__id__74AE54BC">
+      <End Role="user" EntitySet="users" />
+      <End Role="staff" EntitySet="staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__staff__role__75A278F5" Association="LibraryModel.FK__staff__role__75A278F5">
+      <End Role="staffRole" EntitySet="staffRoles" />
+      <End Role="staff" EntitySet="staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__type__35BCFE0A" Association="LibraryModel.FK__users__type__35BCFE0A">
+      <End Role="userType" EntitySet="userTypes" />
+      <End Role="user" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="user" Relationship="LibraryModel.FK__account__id__38996AB5" FromRole="account" ToRole="user" />
+  </EntityType>
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pubDate" Type="DateTime" Precision="3" />
+    <Property Name="publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="categoryId" Type="Int32" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="bookCategory" Relationship="LibraryModel.FK__book__categoryId__47DBAE45" FromRole="book" ToRole="bookCategory" />
+    <NavigationProperty Name="bookOfTeachers" Relationship="LibraryModel.FK__bookOfTeach__bid__656C112C" FromRole="book" ToRole="bookOfTeacher" />
+    <NavigationProperty Name="borrows" Relationship="LibraryModel.FK__borrow__bid__5DCAEF64" FromRole="book" ToRole="borrow" />
+    <NavigationProperty Name="returnBooks" Relationship="LibraryModel.FK__returnBook__bid__619B8048" FromRole="book" ToRole="returnBook" />
+  </EntityType>
+  <EntityType Name="bookCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="books" Relationship="LibraryModel.FK__book__categoryId__47DBAE45" FromRole="bookCategory" ToRole="book" />
+  </EntityType>
+  <EntityType Name="bookOfTeacher">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tid" Type="Int32" />
+    <Property Name="bid" Type="Int32" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="book" Relationship="LibraryModel.FK__bookOfTeach__bid__656C112C" FromRole="bookOfTeacher" ToRole="book" />
+    <NavigationProperty Name="user" Relationship="LibraryModel.FK__bookOfTeach__tid__6477ECF3" FromRole="bookOfTeacher" ToRole="user" />
+  </EntityType>
+  <EntityType Name="borrow">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="bid" Type="Int32" />
+    <Property Name="borrowDate" Type="DateTime" Precision="3" />
+    <Property Name="expired" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="book" Relationship="LibraryModel.FK__borrow__bid__5DCAEF64" FromRole="borrow" ToRole="book" />
+    <NavigationProperty Name="user" Relationship="LibraryModel.FK__borrow__uid__5CD6CB2B" FromRole="borrow" ToRole="user" />
+  </EntityType>
+  <EntityType Name="returnBook">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="bid" Type="Int32" />
+    <Property Name="returnDate" Type="DateTime" Precision="3" />
+    <Property Name="expired" Type="Boolean" />
+    <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="book" Relationship="LibraryModel.FK__returnBook__bid__619B8048" FromRole="returnBook" ToRole="book" />
+    <NavigationProperty Name="user" Relationship="LibraryModel.FK__returnBook__uid__60A75C0F" FromRole="returnBook" ToRole="user" />
+  </EntityType>
+  <EntityType Name="shift">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sid" Type="Int32" />
+    <Property Name="ca" Type="Int32" />
+    <Property Name="thu" Type="Int32" />
+    <NavigationProperty Name="staff" Relationship="LibraryModel.FK__shifts__sid__7E37BEF6" FromRole="shift" ToRole="staff" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="role" Type="Int32" />
+    <Property Name="code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="shifts" Relationship="LibraryModel.FK__shifts__sid__7E37BEF6" FromRole="staff" ToRole="shift" />
+    <NavigationProperty Name="user" Relationship="LibraryModel.FK__staff__id__74AE54BC" FromRole="staff" ToRole="user" />
+    <NavigationProperty Name="staffRole" Relationship="LibraryModel.FK__staff__role__75A278F5" FromRole="staff" ToRole="staffRole" />
+  </EntityType>
+  <EntityType Name="staffRole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="staffs" Relationship="LibraryModel.FK__staff__role__75A278F5" FromRole="staffRole" ToRole="staff" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="lname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="fname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDate" Type="DateTime" Precision="3" />
+    <Property Name="gender" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="account" Relationship="LibraryModel.FK__account__id__38996AB5" FromRole="user" ToRole="account" />
+    <NavigationProperty Name="bookOfTeachers" Relationship="LibraryModel.FK__bookOfTeach__tid__6477ECF3" FromRole="user" ToRole="bookOfTeacher" />
+    <NavigationProperty Name="borrows" Relationship="LibraryModel.FK__borrow__uid__5CD6CB2B" FromRole="user" ToRole="borrow" />
+    <NavigationProperty Name="returnBooks" Relationship="LibraryModel.FK__returnBook__uid__60A75C0F" FromRole="user" ToRole="returnBook" />
+    <NavigationProperty Name="staff" Relationship="LibraryModel.FK__staff__id__74AE54BC" FromRole="user" ToRole="staff" />
+    <NavigationProperty Name="userType" Relationship="LibraryModel.FK__users__type__35BCFE0A" FromRole="user" ToRole="userType" />
+  </EntityType>
+  <EntityType Name="userType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typeName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="users" Relationship="LibraryModel.FK__users__type__35BCFE0A" FromRole="userType" ToRole="user" />
+  </EntityType>
+  <Association Name="FK__account__id__38996AB5">
+    <End Type="LibraryModel.user" Role="user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="LibraryModel.account" Role="account" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="account">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__book__categoryId__47DBAE45">
+    <End Type="LibraryModel.bookCategory" Role="bookCategory" Multiplicity="0..1" />
+    <End Type="LibraryModel.book" Role="book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bookCategory">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="book">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__bookOfTeach__bid__656C112C">
+    <End Type="LibraryModel.book" Role="book" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="LibraryModel.bookOfTeacher" Role="bookOfTeacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="bookOfTeacher">
+        <PropertyRef Name="bid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__borrow__bid__5DCAEF64">
+    <End Type="LibraryModel.book" Role="book" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="LibraryModel.borrow" Role="borrow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="borrow">
+        <PropertyRef Name="bid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__returnBook__bid__619B8048">
+    <End Type="LibraryModel.book" Role="book" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="LibraryModel.returnBook" Role="returnBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="returnBook">
+        <PropertyRef Name="bid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__bookOfTeach__tid__6477ECF3">
+    <End Type="LibraryModel.user" Role="user" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="LibraryModel.bookOfTeacher" Role="bookOfTeacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="bookOfTeacher">
+        <PropertyRef Name="tid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__borrow__uid__5CD6CB2B">
+    <End Type="LibraryModel.user" Role="user" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="LibraryModel.borrow" Role="borrow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="borrow">
+        <PropertyRef Name="uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__returnBook__uid__60A75C0F">
+    <End Type="LibraryModel.user" Role="user" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="LibraryModel.returnBook" Role="returnBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="returnBook">
+        <PropertyRef Name="uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__shifts__sid__7E37BEF6">
+    <End Type="LibraryModel.staff" Role="staff" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="LibraryModel.shift" Role="shift" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="shift">
+        <PropertyRef Name="sid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__staff__id__74AE54BC">
+    <End Type="LibraryModel.user" Role="user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="LibraryModel.staff" Role="staff" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__staff__role__75A278F5">
+    <End Type="LibraryModel.staffRole" Role="staffRole" Multiplicity="0..1" />
+    <End Type="LibraryModel.staff" Role="staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRole">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__type__35BCFE0A">
+    <End Type="LibraryModel.userType" Role="userType" Multiplicity="0..1" />
+    <End Type="LibraryModel.user" Role="user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="author" Type="nvarchar" MaxLength="50" />
+    <Property Name="pubDate" Type="datetime" />
+    <Property Name="publisher" Type="nvarchar" MaxLength="50" />
+    <Property Name="categoryId" Type="int" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="img" Type="image" />
+  </EntityType>
+  <EntityType Name="bookCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bookOfTeacher">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tid" Type="int" />
+    <Property Name="bid" Type="int" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="borrow">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="int" />
+    <Property Name="bid" Type="int" />
+    <Property Name="borrowDate" Type="datetime" />
+    <Property Name="expired" Type="datetime" />
+  </EntityType>
+  <EntityType Name="returnBook">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="int" />
+    <Property Name="bid" Type="int" />
+    <Property Name="returnDate" Type="datetime" />
+    <Property Name="expired" Type="bit" />
+    <Property Name="status" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="shifts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sid" Type="int" />
+    <Property Name="ca" Type="int" />
+    <Property Name="thu" Type="int" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="role" Type="int" />
+    <Property Name="code" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="staffRole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="roleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" />
+    <Property Name="lname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="fname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="BirthDate" Type="datetime" />
+    <Property Name="gender" Type="nvarchar" MaxLength="100" />
+    <Property Name="phone" Type="nvarchar" MaxLength="100" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" />
+    <Property Name="img" Type="image" />
+  </EntityType>
+  <EntityType Name="userType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="typeName" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__account__id__38996AB5">
+    <End Role="users" Type="Self.users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="account" Type="Self.account" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="account">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__book__categoryId__47DBAE45">
+    <End Role="bookCategory" Type="Self.bookCategory" Multiplicity="0..1" />
+    <End Role="book" Type="Self.book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bookCategory">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="book">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__bookOfTeach__bid__656C112C">
+    <End Role="book" Type="Self.book" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="bookOfTeacher" Type="Self.bookOfTeacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="bookOfTeacher">
+        <PropertyRef Name="bid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__bookOfTeach__tid__6477ECF3">
+    <End Role="users" Type="Self.users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="bookOfTeacher" Type="Self.bookOfTeacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="bookOfTeacher">
+        <PropertyRef Name="tid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__borrow__bid__5DCAEF64">
+    <End Role="book" Type="Self.book" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="borrow" Type="Self.borrow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="borrow">
+        <PropertyRef Name="bid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__borrow__uid__5CD6CB2B">
+    <End Role="users" Type="Self.users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="borrow" Type="Self.borrow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="borrow">
+        <PropertyRef Name="uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__returnBook__bid__619B8048">
+    <End Role="book" Type="Self.book" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="returnBook" Type="Self.returnBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="returnBook">
+        <PropertyRef Name="bid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__returnBook__uid__60A75C0F">
+    <End Role="users" Type="Self.users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="returnBook" Type="Self.returnBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="returnBook">
+        <PropertyRef Name="uid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__shifts__sid__7E37BEF6">
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="shifts" Type="Self.shifts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="shifts">
+        <PropertyRef Name="sid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__staff__id__74AE54BC">
+    <End Role="users" Type="Self.users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__staff__role__75A278F5">
+    <End Role="staffRole" Type="Self.staffRole" Multiplicity="0..1" />
+    <End Role="staff" Type="Self.staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRole">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__type__35BCFE0A">
+    <End Role="userType" Type="Self.userType" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibraryModelStoreContainer">
+    <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="book" EntityType="Self.book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bookCategory" EntityType="Self.bookCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bookOfTeacher" EntityType="Self.bookOfTeacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="borrow" EntityType="Self.borrow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="returnBook" EntityType="Self.returnBook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="shifts" EntityType="Self.shifts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="staffRole" EntityType="Self.staffRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userType" EntityType="Self.userType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__account__id__38996AB5" Association="Self.FK__account__id__38996AB5">
+      <End Role="users" EntitySet="users" />
+      <End Role="account" EntitySet="account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__book__categoryId__47DBAE45" Association="Self.FK__book__categoryId__47DBAE45">
+      <End Role="bookCategory" EntitySet="bookCategory" />
+      <End Role="book" EntitySet="book" />
+    </AssociationSet>
+    <AssociationSet Name="FK__bookOfTeach__bid__656C112C" Association="Self.FK__bookOfTeach__bid__656C112C">
+      <End Role="book" EntitySet="book" />
+      <End Role="bookOfTeacher" EntitySet="bookOfTeacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__bookOfTeach__tid__6477ECF3" Association="Self.FK__bookOfTeach__tid__6477ECF3">
+      <End Role="users" EntitySet="users" />
+      <End Role="bookOfTeacher" EntitySet="bookOfTeacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK__borrow__bid__5DCAEF64" Association="Self.FK__borrow__bid__5DCAEF64">
+      <End Role="book" EntitySet="book" />
+      <End Role="borrow" EntitySet="borrow" />
+    </AssociationSet>
+    <AssociationSet Name="FK__borrow__uid__5CD6CB2B" Association="Self.FK__borrow__uid__5CD6CB2B">
+      <End Role="users" EntitySet="users" />
+      <End Role="borrow" EntitySet="borrow" />
+    </AssociationSet>
+    <AssociationSet Name="FK__returnBook__bid__619B8048" Association="Self.FK__returnBook__bid__619B8048">
+      <End Role="book" EntitySet="book" />
+      <End Role="returnBook" EntitySet="returnBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK__returnBook__uid__60A75C0F" Association="Self.FK__returnBook__uid__60A75C0F">
+      <End Role="users" EntitySet="users" />
+      <End Role="returnBook" EntitySet="returnBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK__shifts__sid__7E37BEF6" Association="Self.FK__shifts__sid__7E37BEF6">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="shifts" EntitySet="shifts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__staff__id__74AE54BC" Association="Self.FK__staff__id__74AE54BC">
+      <End Role="users" EntitySet="users" />
+      <End Role="staff" EntitySet="staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK__staff__role__75A278F5" Association="Self.FK__staff__role__75A278F5">
+      <End Role="staffRole" EntitySet="staffRole" />
+      <End Role="staff" EntitySet="staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__type__35BCFE0A" Association="Self.FK__users__type__35BCFE0A">
+      <End Role="userType" EntitySet="userType" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

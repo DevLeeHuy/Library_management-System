@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LibraryModelStoreContainer" CdmEntityContainer="LibraryEntities">
+    <EntitySetMapping Name="accounts">
+      <EntityTypeMapping TypeName="LibraryModel.account">
+        <MappingFragment StoreEntitySet="account">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="books">
+      <EntityTypeMapping TypeName="LibraryModel.book">
+        <MappingFragment StoreEntitySet="book">
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="publisher" ColumnName="publisher" />
+          <ScalarProperty Name="pubDate" ColumnName="pubDate" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bookCategories">
+      <EntityTypeMapping TypeName="LibraryModel.bookCategory">
+        <MappingFragment StoreEntitySet="bookCategory">
+          <ScalarProperty Name="catName" ColumnName="catName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bookOfTeachers">
+      <EntityTypeMapping TypeName="LibraryModel.bookOfTeacher">
+        <MappingFragment StoreEntitySet="bookOfTeacher">
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="bid" ColumnName="bid" />
+          <ScalarProperty Name="tid" ColumnName="tid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="borrows">
+      <EntityTypeMapping TypeName="LibraryModel.borrow">
+        <MappingFragment StoreEntitySet="borrow">
+          <ScalarProperty Name="expired" ColumnName="expired" />
+          <ScalarProperty Name="borrowDate" ColumnName="borrowDate" />
+          <ScalarProperty Name="bid" ColumnName="bid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="returnBooks">
+      <EntityTypeMapping TypeName="LibraryModel.returnBook">
+        <MappingFragment StoreEntitySet="returnBook">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="expired" ColumnName="expired" />
+          <ScalarProperty Name="returnDate" ColumnName="returnDate" />
+          <ScalarProperty Name="bid" ColumnName="bid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shifts">
+      <EntityTypeMapping TypeName="LibraryModel.shift">
+        <MappingFragment StoreEntitySet="shifts">
+          <ScalarProperty Name="thu" ColumnName="thu" />
+          <ScalarProperty Name="ca" ColumnName="ca" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffs">
+      <EntityTypeMapping TypeName="LibraryModel.staff">
+        <MappingFragment StoreEntitySet="staff">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffRoles">
+      <EntityTypeMapping TypeName="LibraryModel.staffRole">
+        <MappingFragment StoreEntitySet="staffRole">
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="LibraryModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userTypes">
+      <EntityTypeMapping TypeName="LibraryModel.userType">
+        <MappingFragment StoreEntitySet="userType">
+          <ScalarProperty Name="typeName" ColumnName="typeName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

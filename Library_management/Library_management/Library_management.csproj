@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0513192-376A-4995-90F0-0FD968F4C95E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Library_management</RootNamespace>
+    <AssemblyName>Library_management</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="account.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="book.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bookCategory.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bookOfTeacher.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="borrow.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="config\Globals.cs" />
+    <Compile Include="forms\Admin\mainFrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Admin\mainFrmAdmin.Designer.cs">
+      <DependentUpon>mainFrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Book\Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Book\Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Book\ManageBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Book\ManageBook.Designer.cs">
+      <DependentUpon>ManageBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Book\ManageBorrow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Book\ManageBorrow.Designer.cs">
+      <DependentUpon>ManageBorrow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Book\ManageReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Book\ManageReturn.Designer.cs">
+      <DependentUpon>ManageReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Book\topList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Book\topList.Designer.cs">
+      <DependentUpon>topList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmRegister.Designer.cs">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\groupPeople\groupPeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\groupPeople\groupPeople.Designer.cs">
+      <DependentUpon>groupPeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Schedule\frmSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Schedule\frmSchedule.Designer.cs">
+      <DependentUpon>frmSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Schedule\Shift.cs" />
+    <Compile Include="forms\Schedule\Schedule.cs" />
+    <Compile Include="forms\Schedule\viewSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Schedule\viewSchedule.Designer.cs">
+      <DependentUpon>viewSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Student\mainFrmStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Student\mainFrmStudent.Designer.cs">
+      <DependentUpon>mainFrmStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Student\ManageStd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Student\ManageStd.Designer.cs">
+      <DependentUpon>ManageStd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Teacher\mainFrmTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Teacher\mainFrmTeacher.Designer.cs">
+      <DependentUpon>mainFrmTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Teacher\ManageTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Teacher\ManageTeacher.Designer.cs">
+      <DependentUpon>ManageTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="library.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>library.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="library.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="library.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>library.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Teacher\LibraryBorrow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Teacher\LibraryBorrow.Designer.cs">
+      <DependentUpon>LibraryBorrow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="models\bookDB.cs" />
+    <Compile Include="models\borrowDB.cs" />
+    <Compile Include="models\categoryDB.cs" />
+    <Compile Include="models\staffDB.cs" />
+    <Compile Include="models\studentDB.cs" />
+    <Compile Include="models\teacherDB.cs" />
+    <Compile Include="models\userDB.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="returnBook.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="shift.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="staff.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="staffRole.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="userType.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="forms\Admin\mainFrmAdmin.resx">
+      <DependentUpon>mainFrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Book\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Book\ManageBook.resx">
+      <DependentUpon>ManageBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Book\ManageBorrow.resx">
+      <DependentUpon>ManageBorrow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Book\ManageReturn.resx">
+      <DependentUpon>ManageReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Book\topList.resx">
+      <DependentUpon>topList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\groupPeople\groupPeople.resx">
+      <DependentUpon>groupPeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Schedule\frmSchedule.resx">
+      <DependentUpon>frmSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Schedule\viewSchedule.resx">
+      <DependentUpon>viewSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Student\mainFrmStudent.resx">
+      <DependentUpon>mainFrmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Student\ManageStd.resx">
+      <DependentUpon>ManageStd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Teacher\mainFrmTeacher.resx">
+      <DependentUpon>mainFrmTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Teacher\ManageTeacher.resx">
+      <DependentUpon>ManageTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Teacher\LibraryBorrow.resx">
+      <DependentUpon>LibraryBorrow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="library.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>library.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="library.edmx.diagram">
+      <DependentUpon>library.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="library.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>library.Context.cs</LastGenOutput>
+      <DependentUpon>library.edmx</DependentUpon>
+    </Content>
+    <Content Include="library.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>library.edmx</DependentUpon>
+      <LastGenOutput>library.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
