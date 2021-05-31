@@ -23,6 +23,14 @@ namespace Library_management.models
            
             return rs.ToList();
         }
+        public static List<book> getListInStock()
+        {
+            var rs = from b in db.books
+                     where b.quantity > 0
+                     select b;
+
+            return rs.ToList();
+        }
         public static List<book> getList()
         {
             var rs = from b in db.books
@@ -46,7 +54,7 @@ namespace Library_management.models
 
             return rs.SingleOrDefault();
         }
-        public static bool insert(string title, string des, string author, DateTime pub, string publisher, int catId, int quantity, MemoryStream img)
+        public static bool insert(string title, string des, string author, DateTime pub, string publisher, int catId, int quantity, MemoryStream img,int price)
         {
             try
             {
@@ -59,6 +67,7 @@ namespace Library_management.models
                     publisher = publisher,
                     categoryId = catId, 
                     quantity = quantity,
+                    price = price,
                     img = img.ToArray()
                 }) ;
                 Debug.WriteLine(rs.id);
@@ -84,7 +93,7 @@ namespace Library_management.models
                 return false;
             }
         }
-        public static bool update(int id, string title, string des, string author, DateTime pub, string publisher, int catId, int quantity,MemoryStream img)
+        public static bool update(int id, string title, string des, string author, DateTime pub, string publisher, int catId, int quantity,MemoryStream img,int price)
         {
             try
             {
@@ -96,6 +105,7 @@ namespace Library_management.models
                 b.publisher = publisher;
                 b.categoryId = catId;
                 b.quantity = quantity;
+                b.price = price;
                 b.img = img.ToArray();
                 db.SaveChanges();
                 return true;

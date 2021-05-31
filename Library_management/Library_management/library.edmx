@@ -26,6 +26,7 @@
           <Property Name="categoryId" Type="int" />
           <Property Name="quantity" Type="int" Nullable="false" />
           <Property Name="img" Type="image" />
+          <Property Name="price" Type="int" />
         </EntityType>
         <EntityType Name="bookCategory">
           <Key>
@@ -53,16 +54,24 @@
           <Property Name="borrowDate" Type="datetime" />
           <Property Name="expired" Type="datetime" />
         </EntityType>
+        <EntityType Name="fineMoney">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="fine" Type="float" />
+        </EntityType>
         <EntityType Name="returnBook">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="uid" Type="int" />
           <Property Name="bid" Type="int" />
-          <Property Name="returnDate" Type="datetime" />
-          <Property Name="expired" Type="bit" />
-          <Property Name="status" Type="varchar" MaxLength="20" />
+          <Property Name="isExpired" Type="bit" />
+          <Property Name="isDamaged" Type="bit" />
+          <Property Name="isLost" Type="bit" />
+          <Property Name="pending" Type="bit" />
         </EntityType>
         <EntityType Name="shifts">
           <Key>
@@ -191,7 +200,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__returnBook__bid__619B8048">
+        <Association Name="FK__fineMoney__id__06CD04F7">
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="fineMoney" Type="Self.fineMoney" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="fineMoney">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__returnBook__bid__03F0984C">
           <End Role="book" Type="Self.book" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -205,7 +228,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__returnBook__uid__60A75C0F">
+        <Association Name="FK__returnBook__uid__02FC7413">
           <End Role="users" Type="Self.users" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -277,6 +300,7 @@
           <EntitySet Name="bookCategory" EntityType="Self.bookCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="bookOfTeacher" EntityType="Self.bookOfTeacher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="borrow" EntityType="Self.borrow" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fineMoney" EntityType="Self.fineMoney" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="returnBook" EntityType="Self.returnBook" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="shifts" EntityType="Self.shifts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
@@ -307,11 +331,15 @@
             <End Role="users" EntitySet="users" />
             <End Role="borrow" EntitySet="borrow" />
           </AssociationSet>
-          <AssociationSet Name="FK__returnBook__bid__619B8048" Association="Self.FK__returnBook__bid__619B8048">
+          <AssociationSet Name="FK__fineMoney__id__06CD04F7" Association="Self.FK__fineMoney__id__06CD04F7">
+            <End Role="users" EntitySet="users" />
+            <End Role="fineMoney" EntitySet="fineMoney" />
+          </AssociationSet>
+          <AssociationSet Name="FK__returnBook__bid__03F0984C" Association="Self.FK__returnBook__bid__03F0984C">
             <End Role="book" EntitySet="book" />
             <End Role="returnBook" EntitySet="returnBook" />
           </AssociationSet>
-          <AssociationSet Name="FK__returnBook__uid__60A75C0F" Association="Self.FK__returnBook__uid__60A75C0F">
+          <AssociationSet Name="FK__returnBook__uid__02FC7413" Association="Self.FK__returnBook__uid__02FC7413">
             <End Role="users" EntitySet="users" />
             <End Role="returnBook" EntitySet="returnBook" />
           </AssociationSet>
@@ -342,6 +370,7 @@
           <EntitySet Name="bookCategories" EntityType="LibraryModel.bookCategory" />
           <EntitySet Name="bookOfTeachers" EntityType="LibraryModel.bookOfTeacher" />
           <EntitySet Name="borrows" EntityType="LibraryModel.borrow" />
+          <EntitySet Name="fineMoneys" EntityType="LibraryModel.fineMoney" />
           <EntitySet Name="returnBooks" EntityType="LibraryModel.returnBook" />
           <EntitySet Name="shifts" EntityType="LibraryModel.shift" />
           <EntitySet Name="staffs" EntityType="LibraryModel.staff" />
@@ -364,7 +393,7 @@
             <End Role="book" EntitySet="books" />
             <End Role="borrow" EntitySet="borrows" />
           </AssociationSet>
-          <AssociationSet Name="FK__returnBook__bid__619B8048" Association="LibraryModel.FK__returnBook__bid__619B8048">
+          <AssociationSet Name="FK__returnBook__bid__03F0984C" Association="LibraryModel.FK__returnBook__bid__03F0984C">
             <End Role="book" EntitySet="books" />
             <End Role="returnBook" EntitySet="returnBooks" />
           </AssociationSet>
@@ -376,7 +405,11 @@
             <End Role="user" EntitySet="users" />
             <End Role="borrow" EntitySet="borrows" />
           </AssociationSet>
-          <AssociationSet Name="FK__returnBook__uid__60A75C0F" Association="LibraryModel.FK__returnBook__uid__60A75C0F">
+          <AssociationSet Name="FK__fineMoney__id__06CD04F7" Association="LibraryModel.FK__fineMoney__id__06CD04F7">
+            <End Role="user" EntitySet="users" />
+            <End Role="fineMoney" EntitySet="fineMoneys" />
+          </AssociationSet>
+          <AssociationSet Name="FK__returnBook__uid__02FC7413" Association="LibraryModel.FK__returnBook__uid__02FC7413">
             <End Role="user" EntitySet="users" />
             <End Role="returnBook" EntitySet="returnBooks" />
           </AssociationSet>
@@ -419,10 +452,11 @@
           <Property Name="categoryId" Type="Int32" />
           <Property Name="quantity" Type="Int32" Nullable="false" />
           <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="price" Type="Int32" />
           <NavigationProperty Name="bookCategory" Relationship="LibraryModel.FK__book__categoryId__47DBAE45" FromRole="book" ToRole="bookCategory" />
           <NavigationProperty Name="bookOfTeachers" Relationship="LibraryModel.FK__bookOfTeach__bid__656C112C" FromRole="book" ToRole="bookOfTeacher" />
           <NavigationProperty Name="borrows" Relationship="LibraryModel.FK__borrow__bid__5DCAEF64" FromRole="book" ToRole="borrow" />
-          <NavigationProperty Name="returnBooks" Relationship="LibraryModel.FK__returnBook__bid__619B8048" FromRole="book" ToRole="returnBook" />
+          <NavigationProperty Name="returnBooks" Relationship="LibraryModel.FK__returnBook__bid__03F0984C" FromRole="book" ToRole="returnBook" />
         </EntityType>
         <EntityType Name="bookCategory">
           <Key>
@@ -455,18 +489,27 @@
           <NavigationProperty Name="book" Relationship="LibraryModel.FK__borrow__bid__5DCAEF64" FromRole="borrow" ToRole="book" />
           <NavigationProperty Name="user" Relationship="LibraryModel.FK__borrow__uid__5CD6CB2B" FromRole="borrow" ToRole="user" />
         </EntityType>
+        <EntityType Name="fineMoney">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="fine" Type="Double" />
+          <NavigationProperty Name="user" Relationship="LibraryModel.FK__fineMoney__id__06CD04F7" FromRole="fineMoney" ToRole="user" />
+        </EntityType>
         <EntityType Name="returnBook">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="uid" Type="Int32" />
           <Property Name="bid" Type="Int32" />
-          <Property Name="returnDate" Type="DateTime" Precision="3" />
-          <Property Name="expired" Type="Boolean" />
-          <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="book" Relationship="LibraryModel.FK__returnBook__bid__619B8048" FromRole="returnBook" ToRole="book" />
-          <NavigationProperty Name="user" Relationship="LibraryModel.FK__returnBook__uid__60A75C0F" FromRole="returnBook" ToRole="user" />
+          <Property Name="isExpired" Type="Boolean" />
+          <Property Name="isDamaged" Type="Boolean" />
+          <Property Name="isLost" Type="Boolean" />
+          <Property Name="pending" Type="Boolean" />
+          <NavigationProperty Name="book" Relationship="LibraryModel.FK__returnBook__bid__03F0984C" FromRole="returnBook" ToRole="book" />
+          <NavigationProperty Name="user" Relationship="LibraryModel.FK__returnBook__uid__02FC7413" FromRole="returnBook" ToRole="user" />
         </EntityType>
         <EntityType Name="shift">
           <Key>
@@ -513,7 +556,8 @@
           <NavigationProperty Name="account" Relationship="LibraryModel.FK__account__id__38996AB5" FromRole="user" ToRole="account" />
           <NavigationProperty Name="bookOfTeachers" Relationship="LibraryModel.FK__bookOfTeach__tid__6477ECF3" FromRole="user" ToRole="bookOfTeacher" />
           <NavigationProperty Name="borrows" Relationship="LibraryModel.FK__borrow__uid__5CD6CB2B" FromRole="user" ToRole="borrow" />
-          <NavigationProperty Name="returnBooks" Relationship="LibraryModel.FK__returnBook__uid__60A75C0F" FromRole="user" ToRole="returnBook" />
+          <NavigationProperty Name="fineMoney" Relationship="LibraryModel.FK__fineMoney__id__06CD04F7" FromRole="user" ToRole="fineMoney" />
+          <NavigationProperty Name="returnBooks" Relationship="LibraryModel.FK__returnBook__uid__02FC7413" FromRole="user" ToRole="returnBook" />
           <NavigationProperty Name="staff" Relationship="LibraryModel.FK__staff__id__74AE54BC" FromRole="user" ToRole="staff" />
           <NavigationProperty Name="userType" Relationship="LibraryModel.FK__users__type__35BCFE0A" FromRole="user" ToRole="userType" />
         </EntityType>
@@ -579,7 +623,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__returnBook__bid__619B8048">
+        <Association Name="FK__returnBook__bid__03F0984C">
           <End Type="LibraryModel.book" Role="book" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -621,7 +665,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__returnBook__uid__60A75C0F">
+        <Association Name="FK__fineMoney__id__06CD04F7">
+          <End Type="LibraryModel.user" Role="user" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LibraryModel.fineMoney" Role="fineMoney" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="fineMoney">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__returnBook__uid__02FC7413">
           <End Type="LibraryModel.user" Role="user" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -705,6 +763,7 @@
           <EntitySetMapping Name="books">
             <EntityTypeMapping TypeName="LibraryModel.book">
               <MappingFragment StoreEntitySet="book">
+                <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="img" ColumnName="img" />
                 <ScalarProperty Name="quantity" ColumnName="quantity" />
                 <ScalarProperty Name="categoryId" ColumnName="categoryId" />
@@ -746,12 +805,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="fineMoneys">
+            <EntityTypeMapping TypeName="LibraryModel.fineMoney">
+              <MappingFragment StoreEntitySet="fineMoney">
+                <ScalarProperty Name="fine" ColumnName="fine" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="returnBooks">
             <EntityTypeMapping TypeName="LibraryModel.returnBook">
               <MappingFragment StoreEntitySet="returnBook">
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="expired" ColumnName="expired" />
-                <ScalarProperty Name="returnDate" ColumnName="returnDate" />
+                <ScalarProperty Name="pending" ColumnName="pending" />
+                <ScalarProperty Name="isLost" ColumnName="isLost" />
+                <ScalarProperty Name="isDamaged" ColumnName="isDamaged" />
+                <ScalarProperty Name="isExpired" ColumnName="isExpired" />
                 <ScalarProperty Name="bid" ColumnName="bid" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
                 <ScalarProperty Name="id" ColumnName="id" />

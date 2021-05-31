@@ -5,25 +5,27 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="61765f35f797483a86c5c5b0aecedb59" Name="Diagram1">
-        <EntityTypeShape EntityType="LibraryModel.account" Width="1.5" PointX="5.25" PointY="13.75" />
-        <EntityTypeShape EntityType="LibraryModel.book" Width="1.5" PointX="3" PointY="1.75" />
-        <EntityTypeShape EntityType="LibraryModel.bookCategory" Width="1.5" PointX="0.75" PointY="2.75" />
-        <EntityTypeShape EntityType="LibraryModel.bookOfTeacher" Width="1.5" PointX="5.25" PointY="10.5" />
-        <EntityTypeShape EntityType="LibraryModel.borrow" Width="1.5" PointX="5.25" PointY="4.375" />
-        <EntityTypeShape EntityType="LibraryModel.returnBook" Width="1.5" PointX="8.25" PointY="7.25" />
-        <EntityTypeShape EntityType="LibraryModel.shift" Width="1.5" PointX="7.5" PointY="11.625" />
-        <EntityTypeShape EntityType="LibraryModel.staff" Width="1.5" PointX="5.25" PointY="7.5" />
-        <EntityTypeShape EntityType="LibraryModel.staffRole" Width="1.5" PointX="3" PointY="11.75" />
-        <EntityTypeShape EntityType="LibraryModel.user" Width="1.5" PointX="3" PointY="6.625" />
-        <EntityTypeShape EntityType="LibraryModel.userType" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LibraryModel.account" Width="1.5" PointX="5.25" PointY="22.75" />
+        <EntityTypeShape EntityType="LibraryModel.book" Width="1.5" PointX="3" PointY="3.125" />
+        <EntityTypeShape EntityType="LibraryModel.bookCategory" Width="1.5" PointX="0.75" PointY="4.125" />
+        <EntityTypeShape EntityType="LibraryModel.bookOfTeacher" Width="1.5" PointX="5.25" PointY="11.875" />
+        <EntityTypeShape EntityType="LibraryModel.borrow" Width="1.5" PointX="5.25" PointY="5.75" />
+        <EntityTypeShape EntityType="LibraryModel.fineMoney" Width="1.5" PointX="5.25" PointY="16.875" />
+        <EntityTypeShape EntityType="LibraryModel.returnBook" Width="1.5" PointX="8.25" PointY="8.625" />
+        <EntityTypeShape EntityType="LibraryModel.shift" Width="1.5" PointX="7.5" PointY="13" />
+        <EntityTypeShape EntityType="LibraryModel.staff" Width="1.5" PointX="5.25" PointY="8.875" />
+        <EntityTypeShape EntityType="LibraryModel.staffRole" Width="1.5" PointX="3" PointY="13.125" />
+        <EntityTypeShape EntityType="LibraryModel.user" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="LibraryModel.userType" Width="1.5" PointX="0.75" PointY="9.125" />
         <AssociationConnector Association="LibraryModel.FK__account__id__38996AB5" />
         <AssociationConnector Association="LibraryModel.FK__book__categoryId__47DBAE45" />
         <AssociationConnector Association="LibraryModel.FK__bookOfTeach__bid__656C112C" />
         <AssociationConnector Association="LibraryModel.FK__borrow__bid__5DCAEF64" />
-        <AssociationConnector Association="LibraryModel.FK__returnBook__bid__619B8048" />
+        <AssociationConnector Association="LibraryModel.FK__returnBook__bid__03F0984C" />
         <AssociationConnector Association="LibraryModel.FK__bookOfTeach__tid__6477ECF3" />
         <AssociationConnector Association="LibraryModel.FK__borrow__uid__5CD6CB2B" />
-        <AssociationConnector Association="LibraryModel.FK__returnBook__uid__60A75C0F" />
+        <AssociationConnector Association="LibraryModel.FK__fineMoney__id__06CD04F7" />
+        <AssociationConnector Association="LibraryModel.FK__returnBook__uid__02FC7413" />
         <AssociationConnector Association="LibraryModel.FK__shifts__sid__7E37BEF6" />
         <AssociationConnector Association="LibraryModel.FK__staff__id__74AE54BC" />
         <AssociationConnector Association="LibraryModel.FK__staff__role__75A278F5" />

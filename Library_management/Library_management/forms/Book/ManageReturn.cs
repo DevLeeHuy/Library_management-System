@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace Library_management.forms.Book
     {
         user u = userDB.getById(Globals.user);
         book b = new book();
-        List<int> Fine = new List<int>();
+        float expFine = 5;
         public ManageReturn()
         {
             InitializeComponent();
@@ -47,6 +48,7 @@ namespace Library_management.forms.Book
 
         private void ManageReturn_Load(object sender, EventArgs e)
         {
+            cbLost.Checked = false;
             gvBorrow.DataSource = bookDB.getListBookBorrowByUid(u.id);
             txtBookID.DataBindings.Clear();
             txtBookID.DataBindings.Add("Text", gvBorrow.DataSource, "id");
@@ -54,12 +56,43 @@ namespace Library_management.forms.Book
         void returnBook()
         {
             int exp = DateTime.Compare(DateTime.Now, dtpReturnDate.Value);
-            if (exp > 0 && u.type != 2)
+            if (!cbLost.Checked)
             {
-                MessageBox.Show("You are fined because return book after expired date !!!", "Return record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Fine.Add(Convert.ToInt32(txtBookID.Text));
+                if (exp > 0 && u.type != 2)
+                {
+                    if (fineDB.getById(u.id) != null)
+                    {
+                        float fine = (float)(fineDB.getById(u.id).fine) + expFine;
+                        fineDB.update(u.id, fine);
+                    }
+                    else
+                    {
+                        float fine =  expFine;
+                        fineDB.insert(u.id, fine);
+                    }
+                    MessageBox.Show("You are fined because return book after expired date !!!", "Return record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    
+                }
             }
-            if (borrowDB.delete(u.id, b.id))
+            else
+            {
+                if(u.type != 2)
+                {
+                    if (fineDB.getById(u.id) != null)
+                    {
+                        float fine = (float)((float)(fineDB.getById(u.id).fine) + b.price);
+                        fineDB.update(u.id, fine);
+                    }
+                    else
+                    {
+                        float fine = (float)b.price;
+                        fineDB.insert(u.id, fine);
+                    }
+                    MessageBox.Show("You are fined because because you lost the book !!!", "Return record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+            }
+            if (borrowDB.delete(u.id, b.id) && returnDB.insert(u.id,b.id,exp>0,cbLost.Checked))
             {
                 MessageBox.Show("Successfully return", " Return Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -76,10 +109,19 @@ namespace Library_management.forms.Book
                 int exp = DateTime.Compare(DateTime.Now, (DateTime)br.expired);
                 if (exp > 0)
                 {
+                    if (fineDB.getById(u.id) != null)
+                    {
+                        float fine = (float)(fineDB.getById(u.id).fine) + expFine;
+                        fineDB.update(u.id, fine);
+                    }
+                    else
+                    {
+                        float fine =  expFine;
+                        fineDB.insert(u.id, fine);
+                    }
                     MessageBox.Show("You are fined because return book after expired date !!!\n Book ID: "+ br.bid, "Return record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Fine.Add(Convert.ToInt32(br.bid));
                 }
-                if (!borrowDB.delete(u.id, br.id))
+                if (!borrowDB.delete(u.id, br.id) || !returnDB.insert(u.id,br.id, exp>0,false))
                 {
                     MessageBox.Show("Return book id: " + br.bid + " failed", "Return Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -98,6 +140,11 @@ namespace Library_management.forms.Book
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbLost_CheckedChanged(object sender, EventArgs e)
+        {
+        
         }
     }
 }

@@ -56,7 +56,7 @@ namespace Library_management
             else
             {
                 if (bookDB.insert(txtTitle.Text, txtDesc.Text, txtAuthor.Text, dtpDatePublish.Value, txtPublisher.Text,
-                               Convert.ToInt32(cboCategory.SelectedValue), Convert.ToInt32(txtQuantity.Text), pic))
+                               Convert.ToInt32(cboCategory.SelectedValue), Convert.ToInt32(txtQuantity.Text), pic,0))
                 {
                     bookDB.addTeacherBook(u.id, bookDB.getIdByTitle(txtTitle.Text), Convert.ToInt32(txtQuantity.Text));
                     MessageBox.Show("Thank you 💖💖", " Book Record", MessageBoxButtons.OK, MessageBoxIcon.Information);

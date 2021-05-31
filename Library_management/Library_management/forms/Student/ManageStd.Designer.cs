@@ -62,6 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
+            this.lbTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvListStudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
             this.genderBox.SuspendLayout();
@@ -367,6 +368,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Controls.Add(this.lbTitle);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.FindBtn);
             this.panel5.Controls.Add(this.txtId);
@@ -449,6 +451,18 @@
             this.searchBtn.Text = "Find";
             this.searchBtn.UseVisualStyleBackColor = false;
             // 
+            // lbTitle
+            // 
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.Transparent;
+            this.lbTitle.Location = new System.Drawing.Point(366, 11);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(200, 26);
+            this.lbTitle.TabIndex = 133;
+            this.lbTitle.Text = "MANAGE STUDENT";
+            // 
             // ManageStd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,5 +544,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.Label lbTitle;
     }
 }

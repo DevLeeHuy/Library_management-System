@@ -64,7 +64,7 @@ namespace Library_management.forms.Book
             MemoryStream pic = new MemoryStream();
             Avatar.Image.Save(pic, Avatar.Image.RawFormat);
             if (bookDB.insert(txtTitle.Text, txtDesc.Text, txtAuthor.Text, dtpDatePublish.Value, txtPublisher.Text,
-                                Convert.ToInt32(cboCategory.SelectedValue), 1, pic))
+                                Convert.ToInt32(cboCategory.SelectedValue), Convert.ToInt32(txtQuantity.Text), pic, Convert.ToInt32(txtPrice.Text)))
             {
                 MessageBox.Show("Successfully Added", " Book Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -91,7 +91,7 @@ namespace Library_management.forms.Book
             Avatar.Image.Save(pic, Avatar.Image.RawFormat);
             int id = Convert.ToInt32(txtId.Text);
             if (bookDB.update(id, txtTitle.Text, txtDesc.Text, txtAuthor.Text, dtpDatePublish.Value, txtPublisher.Text,
-                             Convert.ToInt32(cboCategory.SelectedValue), 1, pic))
+                             Convert.ToInt32(cboCategory.SelectedValue), Convert.ToInt32(txtQuantity.Text), pic, Convert.ToInt32(txtPrice.Text)))
             {
                 MessageBox.Show("Successfully Updated", " Book Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

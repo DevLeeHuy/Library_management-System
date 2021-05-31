@@ -1,8 +1,10 @@
-﻿using Library_management.config;
+﻿using DevExpress.XtraReports.UI;
+using Library_management.config;
 using Library_management.forms.Book;
 using Library_management.forms.Student;
 using Library_management.forms.Teacher;
 using Library_management.models;
+using Library_management.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,8 +64,8 @@ namespace Library_management.forms.Admin
                 case "RETURN":
                     f = new Form();
                     break;
-                case "BOOK":
-                    f = new ManageBook();
+                case "PRINT USERS":
+                    printUser();
                     break;
                 default:
                     break;
@@ -89,6 +91,13 @@ namespace Library_management.forms.Admin
             this.Close();
             Form f = new frmLogin();
             f.Show();
+        }
+        void printUser()
+        {
+            User_list report = new User_list();
+            report.Parameters["Print_date"].Value = DateTime.Now;
+            ReportPrintTool preview = new ReportPrintTool(report);
+            preview.ShowRibbonPreview();
         }
     }
 }

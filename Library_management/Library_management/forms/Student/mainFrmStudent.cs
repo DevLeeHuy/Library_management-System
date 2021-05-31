@@ -55,7 +55,9 @@ namespace Library_management.forms.Student
 
         private void mainFrmStudent_Load(object sender, EventArgs e)
         {
-
+            lbAmoutBorrow.Text = borrowDB.getListByUid(u.id).Count.ToString();
+            lbAmountReturnd.Text = returnDB.getListByUid(u.id).Count.ToString();
+            lbAmountFineMoney.Text = fineDB.getById(u.id).fine.ToString() + "$";
         }
 
         private void btnLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

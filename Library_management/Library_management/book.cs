@@ -31,6 +31,7 @@ namespace Library_management
         public Nullable<int> categoryId { get; set; }
         public int quantity { get; set; }
         public byte[] img { get; set; }
+        public Nullable<int> price { get; set; }
     
         public virtual bookCategory bookCategory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

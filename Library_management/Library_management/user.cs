@@ -37,6 +37,7 @@ namespace Library_management
         public virtual ICollection<bookOfTeacher> bookOfTeachers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<borrow> borrows { get; set; }
+        public virtual fineMoney fineMoney { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<returnBook> returnBooks { get; set; }
         public virtual staff staff { get; set; }

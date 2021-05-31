@@ -21,6 +21,7 @@
     <Property Name="categoryId" Type="int" />
     <Property Name="quantity" Type="int" Nullable="false" />
     <Property Name="img" Type="image" />
+    <Property Name="price" Type="int" />
   </EntityType>
   <EntityType Name="bookCategory">
     <Key>
@@ -48,16 +49,24 @@
     <Property Name="borrowDate" Type="datetime" />
     <Property Name="expired" Type="datetime" />
   </EntityType>
+  <EntityType Name="fineMoney">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="fine" Type="float" />
+  </EntityType>
   <EntityType Name="returnBook">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
     <Property Name="uid" Type="int" />
     <Property Name="bid" Type="int" />
-    <Property Name="returnDate" Type="datetime" />
-    <Property Name="expired" Type="bit" />
-    <Property Name="status" Type="varchar" MaxLength="20" />
+    <Property Name="isExpired" Type="bit" />
+    <Property Name="isDamaged" Type="bit" />
+    <Property Name="isLost" Type="bit" />
+    <Property Name="pending" Type="bit" />
   </EntityType>
   <EntityType Name="shifts">
     <Key>
@@ -186,7 +195,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__returnBook__bid__619B8048">
+  <Association Name="FK__fineMoney__id__06CD04F7">
+    <End Role="users" Type="Self.users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="fineMoney" Type="Self.fineMoney" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="fineMoney">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__returnBook__bid__03F0984C">
     <End Role="book" Type="Self.book" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
@@ -200,7 +223,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__returnBook__uid__60A75C0F">
+  <Association Name="FK__returnBook__uid__02FC7413">
     <End Role="users" Type="Self.users" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
@@ -272,6 +295,7 @@
     <EntitySet Name="bookCategory" EntityType="Self.bookCategory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="bookOfTeacher" EntityType="Self.bookOfTeacher" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="borrow" EntityType="Self.borrow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fineMoney" EntityType="Self.fineMoney" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="returnBook" EntityType="Self.returnBook" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="shifts" EntityType="Self.shifts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
@@ -302,11 +326,15 @@
       <End Role="users" EntitySet="users" />
       <End Role="borrow" EntitySet="borrow" />
     </AssociationSet>
-    <AssociationSet Name="FK__returnBook__bid__619B8048" Association="Self.FK__returnBook__bid__619B8048">
+    <AssociationSet Name="FK__fineMoney__id__06CD04F7" Association="Self.FK__fineMoney__id__06CD04F7">
+      <End Role="users" EntitySet="users" />
+      <End Role="fineMoney" EntitySet="fineMoney" />
+    </AssociationSet>
+    <AssociationSet Name="FK__returnBook__bid__03F0984C" Association="Self.FK__returnBook__bid__03F0984C">
       <End Role="book" EntitySet="book" />
       <End Role="returnBook" EntitySet="returnBook" />
     </AssociationSet>
-    <AssociationSet Name="FK__returnBook__uid__60A75C0F" Association="Self.FK__returnBook__uid__60A75C0F">
+    <AssociationSet Name="FK__returnBook__uid__02FC7413" Association="Self.FK__returnBook__uid__02FC7413">
       <End Role="users" EntitySet="users" />
       <End Role="returnBook" EntitySet="returnBook" />
     </AssociationSet>

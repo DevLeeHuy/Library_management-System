@@ -17,9 +17,10 @@ namespace Library_management
         public int id { get; set; }
         public Nullable<int> uid { get; set; }
         public Nullable<int> bid { get; set; }
-        public Nullable<System.DateTime> returnDate { get; set; }
-        public Nullable<bool> expired { get; set; }
-        public string status { get; set; }
+        public Nullable<bool> isExpired { get; set; }
+        public Nullable<bool> isDamaged { get; set; }
+        public Nullable<bool> isLost { get; set; }
+        public Nullable<bool> pending { get; set; }
     
         public virtual book book { get; set; }
         public virtual user user { get; set; }

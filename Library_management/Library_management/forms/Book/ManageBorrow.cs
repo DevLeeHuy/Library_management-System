@@ -22,11 +22,12 @@ namespace Library_management.forms.Book
             txtBorrowerId.Text = u.id.ToString();
             txtName.Text = u.lname + " " + u.fname;
             dtpBorrowDate.Value = DateTime.Now;
+            dtpExpiredDate.Value = DateTime.Now.AddMonths(3);
             this.dtpBorrowDate.Enabled = false;
             cbCat.DataSource = categoryDB.getList();
             cbCat.ValueMember = "id";
             cbCat.DisplayMember = "catName";
-            gvBook.DataSource = bookDB.getList();
+            gvBook.DataSource = bookDB.getListInStock();
 
         }
 
@@ -79,6 +80,7 @@ namespace Library_management.forms.Book
         {
             if (borrowDB.insert(u.id, Convert.ToInt32(txtBookID.Text), dtpBorrowDate.Value, dtpExpiredDate.Value))
             {
+                bookDB.updateQuantity(Convert.ToInt32(txtBookID.Text), -1);
                 MessageBox.Show("Borrow successfully", " Borrow Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

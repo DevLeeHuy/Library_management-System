@@ -13,6 +13,7 @@
     <EntitySetMapping Name="books">
       <EntityTypeMapping TypeName="LibraryModel.book">
         <MappingFragment StoreEntitySet="book">
+          <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="img" ColumnName="img" />
           <ScalarProperty Name="quantity" ColumnName="quantity" />
           <ScalarProperty Name="categoryId" ColumnName="categoryId" />
@@ -54,12 +55,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="fineMoneys">
+      <EntityTypeMapping TypeName="LibraryModel.fineMoney">
+        <MappingFragment StoreEntitySet="fineMoney">
+          <ScalarProperty Name="fine" ColumnName="fine" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="returnBooks">
       <EntityTypeMapping TypeName="LibraryModel.returnBook">
         <MappingFragment StoreEntitySet="returnBook">
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="expired" ColumnName="expired" />
-          <ScalarProperty Name="returnDate" ColumnName="returnDate" />
+          <ScalarProperty Name="pending" ColumnName="pending" />
+          <ScalarProperty Name="isLost" ColumnName="isLost" />
+          <ScalarProperty Name="isDamaged" ColumnName="isDamaged" />
+          <ScalarProperty Name="isExpired" ColumnName="isExpired" />
           <ScalarProperty Name="bid" ColumnName="bid" />
           <ScalarProperty Name="uid" ColumnName="uid" />
           <ScalarProperty Name="id" ColumnName="id" />

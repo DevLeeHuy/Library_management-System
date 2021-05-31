@@ -41,3 +41,17 @@ create table bookCategory(
 	catName nvarchar(50) not null,
 )
 drop table bookCategory
+
+create table returnBook(
+	id int primary key,
+	uid int foreign key references users(id) on delete cascade on update cascade,
+	bid int foreign key references book(id) on delete cascade on update cascade,
+	isExpired bit,
+	isDamaged bit,
+	isLost bit,
+	pending bit
+)
+create table fineMoney(
+	id int primary key foreign key references users(id) on delete cascade on update cascade,
+	fine float
+)

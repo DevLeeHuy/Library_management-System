@@ -30,6 +30,7 @@ namespace Library_management
         public virtual DbSet<bookCategory> bookCategories { get; set; }
         public virtual DbSet<bookOfTeacher> bookOfTeachers { get; set; }
         public virtual DbSet<borrow> borrows { get; set; }
+        public virtual DbSet<fineMoney> fineMoneys { get; set; }
         public virtual DbSet<returnBook> returnBooks { get; set; }
         public virtual DbSet<shift> shifts { get; set; }
         public virtual DbSet<staff> staffs { get; set; }
