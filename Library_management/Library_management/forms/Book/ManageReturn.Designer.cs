@@ -144,6 +144,7 @@
             this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gvBorrow;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.RowAutoHeight = true;
             // 
             // gvBorrow
             // 

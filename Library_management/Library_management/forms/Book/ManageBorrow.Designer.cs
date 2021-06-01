@@ -70,7 +70,7 @@ namespace Library_management.forms.Book
             this.panel1.Controls.Add(this.lbTitle);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(859, 146);
             this.panel1.TabIndex = 7;
@@ -92,7 +92,7 @@ namespace Library_management.forms.Book
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.ForeColor = System.Drawing.Color.Red;
             this.button1.Location = new System.Drawing.Point(817, 9);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 24);
             this.button1.TabIndex = 130;
@@ -117,7 +117,7 @@ namespace Library_management.forms.Book
             this.txtSearch.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Silver;
             this.txtSearch.Location = new System.Drawing.Point(102, 167);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(142, 14);
             this.txtSearch.TabIndex = 9;
@@ -129,7 +129,7 @@ namespace Library_management.forms.Book
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(102, 184);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(142, 2);
             this.panel2.TabIndex = 10;
@@ -178,7 +178,7 @@ namespace Library_management.forms.Book
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel3.Location = new System.Drawing.Point(686, 231);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(129, 2);
             this.panel3.TabIndex = 14;
@@ -187,7 +187,7 @@ namespace Library_management.forms.Book
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel4.Location = new System.Drawing.Point(686, 256);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(129, 2);
             this.panel4.TabIndex = 17;
@@ -195,7 +195,7 @@ namespace Library_management.forms.Book
             // dtpBorrowDate
             // 
             this.dtpBorrowDate.Location = new System.Drawing.Point(694, 365);
-            this.dtpBorrowDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpBorrowDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpBorrowDate.Name = "dtpBorrowDate";
             this.dtpBorrowDate.Size = new System.Drawing.Size(151, 20);
             this.dtpBorrowDate.TabIndex = 19;
@@ -204,7 +204,7 @@ namespace Library_management.forms.Book
             // 
             this.dtpExpiredDate.Enabled = false;
             this.dtpExpiredDate.Location = new System.Drawing.Point(694, 399);
-            this.dtpExpiredDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpExpiredDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpExpiredDate.Name = "dtpExpiredDate";
             this.dtpExpiredDate.Size = new System.Drawing.Size(151, 20);
             this.dtpExpiredDate.TabIndex = 20;
@@ -235,7 +235,7 @@ namespace Library_management.forms.Book
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
             this.panel5.Location = new System.Drawing.Point(607, 289);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(238, 2);
             this.panel5.TabIndex = 23;
@@ -255,7 +255,7 @@ namespace Library_management.forms.Book
             // 
             this.cbCat.FormattingEnabled = true;
             this.cbCat.Location = new System.Drawing.Point(403, 167);
-            this.cbCat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCat.Margin = new System.Windows.Forms.Padding(2);
             this.cbCat.Name = "cbCat";
             this.cbCat.Size = new System.Drawing.Size(92, 21);
             this.cbCat.TabIndex = 30;
@@ -279,13 +279,14 @@ namespace Library_management.forms.Book
             this.gridView1.DetailHeight = 355;
             this.gridView1.GridControl = this.gvBook;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.RowAutoHeight = true;
             // 
             // txtBookID
             // 
             this.txtBookID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtBookID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtBookID.Location = new System.Drawing.Point(686, 214);
-            this.txtBookID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBookID.Margin = new System.Windows.Forms.Padding(2);
             this.txtBookID.Name = "txtBookID";
             this.txtBookID.ReadOnly = true;
             this.txtBookID.Size = new System.Drawing.Size(139, 20);
@@ -295,7 +296,7 @@ namespace Library_management.forms.Book
             // 
             this.txtTitle.Enabled = false;
             this.txtTitle.Location = new System.Drawing.Point(686, 236);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.ReadOnly = true;
             this.txtTitle.Size = new System.Drawing.Size(139, 20);
@@ -328,7 +329,7 @@ namespace Library_management.forms.Book
             this.txtBorrowerId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtBorrowerId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtBorrowerId.Location = new System.Drawing.Point(709, 306);
-            this.txtBorrowerId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBorrowerId.Margin = new System.Windows.Forms.Padding(2);
             this.txtBorrowerId.Name = "txtBorrowerId";
             this.txtBorrowerId.ReadOnly = true;
             this.txtBorrowerId.Size = new System.Drawing.Size(137, 20);
@@ -338,7 +339,7 @@ namespace Library_management.forms.Book
             // 
             this.txtName.Enabled = false;
             this.txtName.Location = new System.Drawing.Point(709, 331);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(137, 20);
@@ -398,7 +399,7 @@ namespace Library_management.forms.Book
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ManageBorrow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageBookAndReturn";

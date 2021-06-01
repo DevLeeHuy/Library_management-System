@@ -25,6 +25,7 @@ namespace Library_management.forms.Book
         private void ManageBook_Load(object sender, EventArgs e)
         {
             gvBook.DataSource = bookDB.getList();
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

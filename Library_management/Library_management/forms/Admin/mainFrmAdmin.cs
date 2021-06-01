@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraReports.UI;
 using Library_management.config;
 using Library_management.forms.Book;
+using Library_management.forms.Chart;
 using Library_management.forms.Student;
 using Library_management.forms.Teacher;
 using Library_management.models;
@@ -29,7 +30,7 @@ namespace Library_management.forms.Admin
         }
         void showProfile()
         {
-            profileId.Text = "User ID: " + u.id;
+            profileId.Text = "User ID: " + u.id + $" ({ u.userType.typeName})";
             profileName.Text = "Name: " + u.fname + " " + u.lname;
             profileImg.Image = Image.FromStream(new MemoryStream(u.img));
         }
@@ -56,16 +57,19 @@ namespace Library_management.forms.Admin
                     f = new ManageTeacher();
                     break;
                 case "STAFF":
-                    f = new Form();
+                    f = new ManageStaff();
                     break;
-                case "BORROW":
-                    f = new Form();
+                case "BOOK":
+                    f = new ManageBook();
                     break;
                 case "RETURN":
                     f = new Form();
                     break;
                 case "PRINT USERS":
                     printUser();
+                    break;
+                case "PRINT BOOK":
+                    printBook();
                     break;
                 default:
                     break;
@@ -80,9 +84,9 @@ namespace Library_management.forms.Admin
             lbAmountTeacher.Text = teacherDB.getListTeacher().Count.ToString();
             lbAmountStudent.Text = studentDB.getListStd().Count.ToString();
             lbAmountStaff.Text = staffDB.getListInStaff().Count.ToString();
-            //lbAmountReturn.Text = 
+            lbAmountReturn.Text = returnDB.getList().Count.ToString();
             lbAmountLibraryBorrow.Text = bookDB.getListBookOfTeacher().Count.ToString();
-           
+            lbAmountFineMoney.Text = fineDB.Total().ToString();
         }
 
         private void btnLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -98,6 +102,23 @@ namespace Library_management.forms.Admin
             report.Parameters["Print_date"].Value = DateTime.Now;
             ReportPrintTool preview = new ReportPrintTool(report);
             preview.ShowRibbonPreview();
+        }
+        void printBook()
+        {
+            Book_List report = new Book_List();
+            ReportPrintTool preview = new ReportPrintTool(report);
+            preview.ShowRibbonPreview();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Form chart = new ChartStudent();
+            chart.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

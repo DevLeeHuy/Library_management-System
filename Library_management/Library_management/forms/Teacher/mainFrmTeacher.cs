@@ -25,8 +25,9 @@ namespace Library_management.forms.Teacher
         }
         void showProfile()
         {
-            profileId.Text = "User ID: " + u.id;
+            profileId.Text = "User ID: " + u.id + $" ({ u.userType.typeName})";
             profileName.Text = "Name: " + u.fname + " " + u.lname;
+
             profileImg.Image = Image.FromStream(new MemoryStream(u.img));
         }
 
@@ -37,11 +38,14 @@ namespace Library_management.forms.Teacher
 
         private void mainFrmTeacher_Load(object sender, EventArgs e)
         {
-
+            lbAmoutBorrow.Text = borrowDB.getListByUid(u.id).Count.ToString();
+            lbAmountReturnd.Text = returnDB.getListByUid(u.id).Count.ToString();
+            lbAmountLibraryBorrow.Text = bookDB.getListBookOfTeacherById(u.id).Count.ToString();
         }
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
+
             Form f = new Form();
             switch (e.Button.Properties.Caption)
             {

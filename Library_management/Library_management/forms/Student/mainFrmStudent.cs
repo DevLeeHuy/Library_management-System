@@ -24,8 +24,9 @@ namespace Library_management.forms.Student
         }
         void showProfile()
         {
-            profileId.Text = "User ID: " + u.id;
+            profileId.Text = "User ID: " + u.id + $" ({ u.userType.typeName})";
             profileName.Text = "Name: " + u.fname + " " + u.lname;
+
             profileImg.Image = Image.FromStream(new MemoryStream(u.img));
         }
     
@@ -66,6 +67,11 @@ namespace Library_management.forms.Student
             this.Close();
             Form f = new frmLogin();
             f.Show();
+        }
+
+        private void profileType_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

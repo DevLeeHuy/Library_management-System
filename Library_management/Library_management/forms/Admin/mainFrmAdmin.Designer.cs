@@ -77,6 +77,7 @@ namespace Library_management.forms.Admin
             this.lbAmountLibraryBorrow = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profileImg)).BeginInit();
             this.panel2.SuspendLayout();
@@ -107,17 +108,19 @@ namespace Library_management.forms.Admin
             this.panel1.Controls.Add(this.profileName);
             this.panel1.Controls.Add(this.profileImg);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1121, 139);
+            this.panel1.Size = new System.Drawing.Size(841, 113);
             this.panel1.TabIndex = 0;
             // 
             // btnLogout
             // 
             this.btnLogout.AutoSize = true;
             this.btnLogout.LinkColor = System.Drawing.Color.Cyan;
-            this.btnLogout.Location = new System.Drawing.Point(17, 87);
+            this.btnLogout.Location = new System.Drawing.Point(13, 71);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(56, 17);
+            this.btnLogout.Size = new System.Drawing.Size(43, 13);
             this.btnLogout.TabIndex = 141;
             this.btnLogout.TabStop = true;
             this.btnLogout.Text = "Log out";
@@ -128,9 +131,10 @@ namespace Library_management.forms.Admin
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(299, 79);
+            this.lbTitle.Location = new System.Drawing.Point(224, 64);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(550, 27);
+            this.lbTitle.Size = new System.Drawing.Size(437, 22);
             this.lbTitle.TabIndex = 140;
             this.lbTitle.Text = "WELCOME MANAGER LIBRARY TO HCMUTE LIBRARY";
             // 
@@ -138,10 +142,10 @@ namespace Library_management.forms.Admin
             // 
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(1073, 19);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(805, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 30);
+            this.button1.Size = new System.Drawing.Size(28, 24);
             this.button1.TabIndex = 139;
             this.button1.Text = "❌";
             this.button1.UseVisualStyleBackColor = false;
@@ -150,30 +154,34 @@ namespace Library_management.forms.Admin
             // profileId
             // 
             this.profileId.AutoSize = true;
+            this.profileId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileId.ForeColor = System.Drawing.Color.White;
-            this.profileId.Location = new System.Drawing.Point(83, 32);
+            this.profileId.Location = new System.Drawing.Point(62, 14);
+            this.profileId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.profileId.Name = "profileId";
-            this.profileId.Size = new System.Drawing.Size(21, 17);
+            this.profileId.Size = new System.Drawing.Size(20, 13);
             this.profileId.TabIndex = 138;
             this.profileId.Text = "ID";
             // 
             // profileName
             // 
             this.profileName.AutoSize = true;
+            this.profileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileName.ForeColor = System.Drawing.Color.White;
-            this.profileName.Location = new System.Drawing.Point(83, 51);
+            this.profileName.Location = new System.Drawing.Point(62, 29);
+            this.profileName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.profileName.Name = "profileName";
-            this.profileName.Size = new System.Drawing.Size(45, 17);
+            this.profileName.Size = new System.Drawing.Size(39, 13);
             this.profileName.TabIndex = 137;
             this.profileName.Text = "Name";
             // 
             // profileImg
             // 
             this.profileImg.Image = ((System.Drawing.Image)(resources.GetObject("profileImg.Image")));
-            this.profileImg.Location = new System.Drawing.Point(12, 11);
-            this.profileImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.profileImg.Location = new System.Drawing.Point(9, 9);
+            this.profileImg.Margin = new System.Windows.Forms.Padding(2);
             this.profileImg.Name = "profileImg";
-            this.profileImg.Size = new System.Drawing.Size(61, 57);
+            this.profileImg.Size = new System.Drawing.Size(46, 46);
             this.profileImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profileImg.TabIndex = 136;
             this.profileImg.TabStop = false;
@@ -181,9 +189,9 @@ namespace Library_management.forms.Admin
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            windowsUIButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions1.SvgImage")));
+            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
             windowsUIButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions2.SvgImage")));
-            windowsUIButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions3.SvgImage")));
+            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
             windowsUIButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions4.SvgImage")));
             windowsUIButtonImageOptions5.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions5.SvgImage")));
             windowsUIButtonImageOptions6.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions6.SvgImage")));
@@ -196,18 +204,18 @@ namespace Library_management.forms.Admin
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("STAFF", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("BORROW", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("RETURN", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("RETURN", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("BOOK", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("BOOK", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("PRINT USERS", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("PRINT USERS", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUISeparator()});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("PRINT BOOK", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel1.ForeColor = System.Drawing.Color.White;
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 136);
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 110);
+            this.windowsUIButtonPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(1121, 104);
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(841, 84);
             this.windowsUIButtonPanel1.TabIndex = 1;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
@@ -218,9 +226,10 @@ namespace Library_management.forms.Admin
             this.panel2.Controls.Add(this.lbAmountStudent);
             this.panel2.Controls.Add(this.lbText);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(56, 273);
+            this.panel2.Location = new System.Drawing.Point(42, 222);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(210, 268);
+            this.panel2.Size = new System.Drawing.Size(158, 218);
             this.panel2.TabIndex = 4;
             // 
             // lbAmountStudent
@@ -228,9 +237,10 @@ namespace Library_management.forms.Admin
             this.lbAmountStudent.AutoSize = true;
             this.lbAmountStudent.BackColor = System.Drawing.Color.White;
             this.lbAmountStudent.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmountStudent.Location = new System.Drawing.Point(27, 210);
+            this.lbAmountStudent.Location = new System.Drawing.Point(20, 171);
+            this.lbAmountStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAmountStudent.Name = "lbAmountStudent";
-            this.lbAmountStudent.Size = new System.Drawing.Size(48, 52);
+            this.lbAmountStudent.Size = new System.Drawing.Size(38, 42);
             this.lbAmountStudent.TabIndex = 2;
             this.lbAmountStudent.Text = "6";
             // 
@@ -238,9 +248,10 @@ namespace Library_management.forms.Admin
             // 
             this.lbText.AutoSize = true;
             this.lbText.ForeColor = System.Drawing.Color.White;
-            this.lbText.Location = new System.Drawing.Point(101, 234);
+            this.lbText.Location = new System.Drawing.Point(76, 190);
+            this.lbText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbText.Name = "lbText";
-            this.lbText.Size = new System.Drawing.Size(83, 17);
+            this.lbText.Size = new System.Drawing.Size(66, 13);
             this.lbText.TabIndex = 1;
             this.lbText.Text = "STUDENTS";
             // 
@@ -249,8 +260,9 @@ namespace Library_management.forms.Admin
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(210, 202);
+            this.pictureBox2.Size = new System.Drawing.Size(158, 164);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -261,9 +273,10 @@ namespace Library_management.forms.Admin
             this.panel3.Controls.Add(this.lbAmountTeacher);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(318, 273);
+            this.panel3.Location = new System.Drawing.Point(238, 222);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(210, 268);
+            this.panel3.Size = new System.Drawing.Size(158, 218);
             this.panel3.TabIndex = 5;
             // 
             // lbAmountTeacher
@@ -271,9 +284,10 @@ namespace Library_management.forms.Admin
             this.lbAmountTeacher.AutoSize = true;
             this.lbAmountTeacher.BackColor = System.Drawing.Color.White;
             this.lbAmountTeacher.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmountTeacher.Location = new System.Drawing.Point(27, 210);
+            this.lbAmountTeacher.Location = new System.Drawing.Point(20, 171);
+            this.lbAmountTeacher.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAmountTeacher.Name = "lbAmountTeacher";
-            this.lbAmountTeacher.Size = new System.Drawing.Size(48, 52);
+            this.lbAmountTeacher.Size = new System.Drawing.Size(38, 42);
             this.lbAmountTeacher.TabIndex = 2;
             this.lbAmountTeacher.Text = "4";
             // 
@@ -281,9 +295,10 @@ namespace Library_management.forms.Admin
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(101, 234);
+            this.label3.Location = new System.Drawing.Point(76, 190);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "TEACHERS";
             // 
@@ -292,8 +307,9 @@ namespace Library_management.forms.Admin
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(210, 202);
+            this.pictureBox3.Size = new System.Drawing.Size(158, 164);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -304,9 +320,10 @@ namespace Library_management.forms.Admin
             this.panel5.Controls.Add(this.lbAmountStaff);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.pictureBox5);
-            this.panel5.Location = new System.Drawing.Point(580, 273);
+            this.panel5.Location = new System.Drawing.Point(435, 222);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(210, 268);
+            this.panel5.Size = new System.Drawing.Size(158, 218);
             this.panel5.TabIndex = 9;
             // 
             // lbAmountStaff
@@ -314,9 +331,10 @@ namespace Library_management.forms.Admin
             this.lbAmountStaff.AutoSize = true;
             this.lbAmountStaff.BackColor = System.Drawing.Color.White;
             this.lbAmountStaff.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmountStaff.Location = new System.Drawing.Point(27, 210);
+            this.lbAmountStaff.Location = new System.Drawing.Point(20, 171);
+            this.lbAmountStaff.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAmountStaff.Name = "lbAmountStaff";
-            this.lbAmountStaff.Size = new System.Drawing.Size(48, 52);
+            this.lbAmountStaff.Size = new System.Drawing.Size(38, 42);
             this.lbAmountStaff.TabIndex = 2;
             this.lbAmountStaff.Text = "4";
             // 
@@ -324,9 +342,10 @@ namespace Library_management.forms.Admin
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(101, 234);
+            this.label6.Location = new System.Drawing.Point(76, 190);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 17);
+            this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "STAFF";
             // 
@@ -335,8 +354,9 @@ namespace Library_management.forms.Admin
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(210, 202);
+            this.pictureBox5.Size = new System.Drawing.Size(158, 164);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
@@ -347,9 +367,10 @@ namespace Library_management.forms.Admin
             this.panel6.Controls.Add(this.lbAmountBorrow);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.pictureBox6);
-            this.panel6.Location = new System.Drawing.Point(56, 570);
+            this.panel6.Location = new System.Drawing.Point(42, 463);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(210, 268);
+            this.panel6.Size = new System.Drawing.Size(158, 218);
             this.panel6.TabIndex = 10;
             // 
             // lbAmountBorrow
@@ -357,9 +378,10 @@ namespace Library_management.forms.Admin
             this.lbAmountBorrow.AutoSize = true;
             this.lbAmountBorrow.BackColor = System.Drawing.Color.White;
             this.lbAmountBorrow.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmountBorrow.Location = new System.Drawing.Point(31, 210);
+            this.lbAmountBorrow.Location = new System.Drawing.Point(23, 171);
+            this.lbAmountBorrow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAmountBorrow.Name = "lbAmountBorrow";
-            this.lbAmountBorrow.Size = new System.Drawing.Size(48, 52);
+            this.lbAmountBorrow.Size = new System.Drawing.Size(38, 42);
             this.lbAmountBorrow.TabIndex = 2;
             this.lbAmountBorrow.Text = "0";
             // 
@@ -367,9 +389,10 @@ namespace Library_management.forms.Admin
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(94, 234);
+            this.label4.Location = new System.Drawing.Point(70, 190);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 17);
+            this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "BORROWS";
             // 
@@ -377,8 +400,9 @@ namespace Library_management.forms.Admin
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(210, 202);
+            this.pictureBox6.Size = new System.Drawing.Size(158, 164);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
@@ -389,9 +413,10 @@ namespace Library_management.forms.Admin
             this.panel4.Controls.Add(this.lbAmountReturn);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Location = new System.Drawing.Point(318, 570);
+            this.panel4.Location = new System.Drawing.Point(238, 463);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(210, 268);
+            this.panel4.Size = new System.Drawing.Size(158, 218);
             this.panel4.TabIndex = 11;
             // 
             // lbAmountReturn
@@ -399,9 +424,10 @@ namespace Library_management.forms.Admin
             this.lbAmountReturn.AutoSize = true;
             this.lbAmountReturn.BackColor = System.Drawing.Color.White;
             this.lbAmountReturn.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmountReturn.Location = new System.Drawing.Point(31, 210);
+            this.lbAmountReturn.Location = new System.Drawing.Point(23, 171);
+            this.lbAmountReturn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAmountReturn.Name = "lbAmountReturn";
-            this.lbAmountReturn.Size = new System.Drawing.Size(48, 52);
+            this.lbAmountReturn.Size = new System.Drawing.Size(38, 42);
             this.lbAmountReturn.TabIndex = 2;
             this.lbAmountReturn.Text = "3";
             // 
@@ -409,9 +435,10 @@ namespace Library_management.forms.Admin
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(101, 234);
+            this.label2.Location = new System.Drawing.Point(76, 190);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 17);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "RETURN";
             // 
@@ -420,8 +447,9 @@ namespace Library_management.forms.Admin
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(210, 202);
+            this.pictureBox4.Size = new System.Drawing.Size(158, 164);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
@@ -432,9 +460,10 @@ namespace Library_management.forms.Admin
             this.panel7.Controls.Add(this.lbAmountBook);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.pictureBox7);
-            this.panel7.Location = new System.Drawing.Point(845, 273);
+            this.panel7.Location = new System.Drawing.Point(634, 222);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(210, 268);
+            this.panel7.Size = new System.Drawing.Size(158, 218);
             this.panel7.TabIndex = 13;
             // 
             // lbAmountBook
@@ -442,9 +471,10 @@ namespace Library_management.forms.Admin
             this.lbAmountBook.AutoSize = true;
             this.lbAmountBook.BackColor = System.Drawing.Color.White;
             this.lbAmountBook.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmountBook.Location = new System.Drawing.Point(31, 210);
+            this.lbAmountBook.Location = new System.Drawing.Point(23, 171);
+            this.lbAmountBook.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAmountBook.Name = "lbAmountBook";
-            this.lbAmountBook.Size = new System.Drawing.Size(48, 52);
+            this.lbAmountBook.Size = new System.Drawing.Size(38, 42);
             this.lbAmountBook.TabIndex = 2;
             this.lbAmountBook.Text = "3";
             // 
@@ -452,9 +482,10 @@ namespace Library_management.forms.Admin
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(101, 234);
+            this.label5.Location = new System.Drawing.Point(76, 190);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 17);
+            this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "BOOKS";
             // 
@@ -463,8 +494,9 @@ namespace Library_management.forms.Admin
             this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(210, 202);
+            this.pictureBox7.Size = new System.Drawing.Size(158, 164);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 0;
             this.pictureBox7.TabStop = false;
@@ -475,9 +507,10 @@ namespace Library_management.forms.Admin
             this.panel8.Controls.Add(this.lbAmountFineMoney);
             this.panel8.Controls.Add(this.label7);
             this.panel8.Controls.Add(this.pictureBox8);
-            this.panel8.Location = new System.Drawing.Point(580, 570);
+            this.panel8.Location = new System.Drawing.Point(435, 463);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(210, 268);
+            this.panel8.Size = new System.Drawing.Size(158, 218);
             this.panel8.TabIndex = 14;
             // 
             // lbAmountFineMoney
@@ -485,9 +518,10 @@ namespace Library_management.forms.Admin
             this.lbAmountFineMoney.AutoSize = true;
             this.lbAmountFineMoney.BackColor = System.Drawing.Color.White;
             this.lbAmountFineMoney.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmountFineMoney.Location = new System.Drawing.Point(31, 210);
+            this.lbAmountFineMoney.Location = new System.Drawing.Point(23, 171);
+            this.lbAmountFineMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAmountFineMoney.Name = "lbAmountFineMoney";
-            this.lbAmountFineMoney.Size = new System.Drawing.Size(48, 52);
+            this.lbAmountFineMoney.Size = new System.Drawing.Size(38, 42);
             this.lbAmountFineMoney.TabIndex = 2;
             this.lbAmountFineMoney.Text = "0";
             // 
@@ -495,9 +529,10 @@ namespace Library_management.forms.Admin
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(101, 234);
+            this.label7.Location = new System.Drawing.Point(76, 190);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 17);
+            this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "$ FINE MONEY";
             // 
@@ -505,8 +540,9 @@ namespace Library_management.forms.Admin
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(210, 202);
+            this.pictureBox8.Size = new System.Drawing.Size(158, 164);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
@@ -517,9 +553,10 @@ namespace Library_management.forms.Admin
             this.panel9.Controls.Add(this.lbAmountLibraryBorrow);
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.pictureBox9);
-            this.panel9.Location = new System.Drawing.Point(845, 570);
+            this.panel9.Location = new System.Drawing.Point(634, 463);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(210, 268);
+            this.panel9.Size = new System.Drawing.Size(158, 218);
             this.panel9.TabIndex = 15;
             // 
             // lbAmountLibraryBorrow
@@ -527,9 +564,10 @@ namespace Library_management.forms.Admin
             this.lbAmountLibraryBorrow.AutoSize = true;
             this.lbAmountLibraryBorrow.BackColor = System.Drawing.Color.White;
             this.lbAmountLibraryBorrow.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmountLibraryBorrow.Location = new System.Drawing.Point(13, 210);
+            this.lbAmountLibraryBorrow.Location = new System.Drawing.Point(10, 171);
+            this.lbAmountLibraryBorrow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAmountLibraryBorrow.Name = "lbAmountLibraryBorrow";
-            this.lbAmountLibraryBorrow.Size = new System.Drawing.Size(48, 52);
+            this.lbAmountLibraryBorrow.Size = new System.Drawing.Size(38, 42);
             this.lbAmountLibraryBorrow.TabIndex = 2;
             this.lbAmountLibraryBorrow.Text = "0";
             // 
@@ -537,9 +575,10 @@ namespace Library_management.forms.Admin
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(76, 239);
+            this.label9.Location = new System.Drawing.Point(57, 194);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 17);
+            this.label9.Size = new System.Drawing.Size(106, 13);
             this.label9.TabIndex = 1;
             this.label9.Text = "LIBRARY BORROW";
             // 
@@ -547,18 +586,32 @@ namespace Library_management.forms.Admin
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
             this.pictureBox9.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(210, 202);
+            this.pictureBox9.Size = new System.Drawing.Size(158, 164);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 0;
             this.pictureBox9.TabStop = false;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(317, 720);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(188, 51);
+            this.simpleButton1.TabIndex = 16;
+            this.simpleButton1.Text = "DASHBOARD";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // mainFrmAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1122, 936);
+            this.ClientSize = new System.Drawing.Size(842, 801);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
@@ -572,6 +625,7 @@ namespace Library_management.forms.Admin
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "mainFrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainFrmAdmin";
@@ -649,5 +703,6 @@ namespace Library_management.forms.Admin
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.LinkLabel btnLogout;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

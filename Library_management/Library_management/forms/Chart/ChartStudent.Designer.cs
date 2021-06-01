@@ -29,14 +29,14 @@ namespace Library_management.forms.Chart
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView5 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView6 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView7 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.Series series8 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView8 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView3 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView4 = new DevExpress.XtraCharts.PieSeriesView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
@@ -98,20 +98,20 @@ namespace Library_management.forms.Chart
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pieChartBook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pieChartStd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pieChartStaff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pieChartTeacher)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -145,12 +145,12 @@ namespace Library_management.forms.Chart
             this.title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.White;
-            this.title.Location = new System.Drawing.Point(456, 29);
+            this.title.Location = new System.Drawing.Point(520, 26);
             this.title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(160, 30);
+            this.title.Size = new System.Drawing.Size(194, 36);
             this.title.TabIndex = 0;
             this.title.Text = "DASHBOARD";
             // 
@@ -232,6 +232,7 @@ namespace Library_management.forms.Chart
             this.pbTop3.Location = new System.Drawing.Point(237, 531);
             this.pbTop3.Name = "pbTop3";
             this.pbTop3.Size = new System.Drawing.Size(159, 205);
+            this.pbTop3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbTop3.TabIndex = 149;
             this.pbTop3.TabStop = false;
             // 
@@ -241,6 +242,7 @@ namespace Library_management.forms.Chart
             this.pbTop2.Location = new System.Drawing.Point(237, 315);
             this.pbTop2.Name = "pbTop2";
             this.pbTop2.Size = new System.Drawing.Size(159, 201);
+            this.pbTop2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbTop2.TabIndex = 148;
             this.pbTop2.TabStop = false;
             // 
@@ -250,6 +252,7 @@ namespace Library_management.forms.Chart
             this.pbTop1.Location = new System.Drawing.Point(237, 106);
             this.pbTop1.Name = "pbTop1";
             this.pbTop1.Size = new System.Drawing.Size(159, 194);
+            this.pbTop1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbTop1.TabIndex = 147;
             this.pbTop1.TabStop = false;
             // 
@@ -279,10 +282,10 @@ namespace Library_management.forms.Chart
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(319, 42);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(430, 25);
+            this.label10.Size = new System.Drawing.Size(463, 25);
             this.label10.TabIndex = 144;
             this.label10.Text = "TOP ĐẦU SÁCH ĐƯỢC ĐỌC GIẢ YÊU THÍCH";
             // 
@@ -327,7 +330,7 @@ namespace Library_management.forms.Chart
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label8.Location = new System.Drawing.Point(16, 11);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 22);
@@ -370,7 +373,7 @@ namespace Library_management.forms.Chart
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label7.Location = new System.Drawing.Point(10, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 22);
@@ -402,7 +405,7 @@ namespace Library_management.forms.Chart
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(12, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 22);
@@ -434,7 +437,7 @@ namespace Library_management.forms.Chart
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.Location = new System.Drawing.Point(16, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 22);
@@ -466,7 +469,7 @@ namespace Library_management.forms.Chart
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(12, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 22);
@@ -479,10 +482,10 @@ namespace Library_management.forms.Chart
             this.pieChartBook.Legend.Name = "Default Legend";
             this.pieChartBook.Location = new System.Drawing.Point(672, 3);
             this.pieChartBook.Name = "pieChartBook";
-            series5.Name = "Series 1";
-            series5.View = pieSeriesView5;
+            series1.Name = "Series 1";
+            series1.View = pieSeriesView1;
             this.pieChartBook.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series5};
+        series1};
             this.pieChartBook.Size = new System.Drawing.Size(506, 456);
             this.pieChartBook.TabIndex = 146;
             // 
@@ -525,10 +528,10 @@ namespace Library_management.forms.Chart
             this.pieChartStd.Location = new System.Drawing.Point(3, 92);
             this.pieChartStd.Name = "pieChartStd";
             this.pieChartStd.PaletteName = "Slipstream";
-            series6.Name = "Series 1";
-            series6.View = pieSeriesView6;
+            series2.Name = "Series 1";
+            series2.View = pieSeriesView2;
             this.pieChartStd.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series6};
+        series2};
             this.pieChartStd.Size = new System.Drawing.Size(355, 201);
             this.pieChartStd.TabIndex = 143;
             // 
@@ -573,10 +576,10 @@ namespace Library_management.forms.Chart
             this.pieChartStaff.Location = new System.Drawing.Point(4, 88);
             this.pieChartStaff.Name = "pieChartStaff";
             this.pieChartStaff.PaletteName = "Slipstream";
-            series7.Name = "Series 1";
-            series7.View = pieSeriesView7;
+            series3.Name = "Series 1";
+            series3.View = pieSeriesView3;
             this.pieChartStaff.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series7};
+        series3};
             this.pieChartStaff.Size = new System.Drawing.Size(435, 201);
             this.pieChartStaff.TabIndex = 145;
             // 
@@ -621,10 +624,10 @@ namespace Library_management.forms.Chart
             this.pieChartTeacher.Location = new System.Drawing.Point(3, 91);
             this.pieChartTeacher.Name = "pieChartTeacher";
             this.pieChartTeacher.PaletteName = "Slipstream";
-            series8.Name = "Series 1";
-            series8.View = pieSeriesView8;
+            series4.Name = "Series 1";
+            series4.View = pieSeriesView4;
             this.pieChartTeacher.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series8};
+        series4};
             this.pieChartTeacher.Size = new System.Drawing.Size(355, 201);
             this.pieChartTeacher.TabIndex = 144;
             // 
@@ -687,23 +690,23 @@ namespace Library_management.forms.Chart
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pieChartBook)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pieChartStd)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pieChartStaff)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pieChartTeacher)).EndInit();
             this.ResumeLayout(false);
 

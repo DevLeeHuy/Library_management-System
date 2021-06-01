@@ -70,5 +70,9 @@ namespace Library_management.models
             }
 
         }
+        public static double? Total()
+        {
+            return db.fineMoneys.Sum(f => f.fine);
+        }
     }
 }

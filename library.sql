@@ -56,9 +56,16 @@ create table fineMoney(
 	fine float
 )
 
-create view as Br_Rt
+create view  Br_Rt as
 (select id,uid,bid from borrow) UNION (select id,uid,bid from returnBook)
 
-select bid, count(uid) 
-from 
-group by bid
+create function top3Book()
+returns table as
+return (
+	select bid, count(uid) quantity
+	from Br_Rt
+	group by bid
+)
+
+select * from top3Book()
+order by quantity DESC

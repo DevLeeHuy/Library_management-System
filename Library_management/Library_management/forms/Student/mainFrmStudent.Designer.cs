@@ -30,8 +30,8 @@ namespace Library_management.forms.Student
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainFrmStudent));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.LinkLabel();
             this.lbTitle = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@ namespace Library_management.forms.Student
             this.panel1.Controls.Add(this.profileName);
             this.panel1.Controls.Add(this.profileImg);
             this.panel1.Location = new System.Drawing.Point(-2, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(601, 105);
             this.panel1.TabIndex = 0;
@@ -107,7 +107,7 @@ namespace Library_management.forms.Student
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.ForeColor = System.Drawing.Color.Red;
             this.button1.Location = new System.Drawing.Point(565, 11);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 24);
             this.button1.TabIndex = 131;
@@ -118,22 +118,24 @@ namespace Library_management.forms.Student
             // profileId
             // 
             this.profileId.AutoSize = true;
+            this.profileId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileId.ForeColor = System.Drawing.Color.White;
             this.profileId.Location = new System.Drawing.Point(64, 28);
             this.profileId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.profileId.Name = "profileId";
-            this.profileId.Size = new System.Drawing.Size(18, 13);
+            this.profileId.Size = new System.Drawing.Size(20, 13);
             this.profileId.TabIndex = 132;
             this.profileId.Text = "ID";
             // 
             // profileName
             // 
             this.profileName.AutoSize = true;
+            this.profileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileName.ForeColor = System.Drawing.Color.White;
             this.profileName.Location = new System.Drawing.Point(64, 43);
             this.profileName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.profileName.Name = "profileName";
-            this.profileName.Size = new System.Drawing.Size(35, 13);
+            this.profileName.Size = new System.Drawing.Size(39, 13);
             this.profileName.TabIndex = 131;
             this.profileName.Text = "Name";
             // 
@@ -141,7 +143,7 @@ namespace Library_management.forms.Student
             // 
             this.profileImg.Image = ((System.Drawing.Image)(resources.GetObject("profileImg.Image")));
             this.profileImg.Location = new System.Drawing.Point(10, 11);
-            this.profileImg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.profileImg.Margin = new System.Windows.Forms.Padding(2);
             this.profileImg.Name = "profileImg";
             this.profileImg.Size = new System.Drawing.Size(46, 46);
             this.profileImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -151,17 +153,17 @@ namespace Library_management.forms.Student
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            windowsUIButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions1.SvgImage")));
-            windowsUIButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions2.SvgImage")));
+            windowsUIButtonImageOptions5.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions5.SvgImage")));
+            windowsUIButtonImageOptions6.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions6.SvgImage")));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Borrow", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Borrow", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Return", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Return", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator()});
             this.windowsUIButtonPanel1.ForeColor = System.Drawing.Color.White;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(-2, 99);
-            this.windowsUIButtonPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.windowsUIButtonPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.Size = new System.Drawing.Size(601, 71);
             this.windowsUIButtonPanel1.TabIndex = 1;
@@ -175,7 +177,7 @@ namespace Library_management.forms.Student
             this.panel2.Controls.Add(this.lbText);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Location = new System.Drawing.Point(23, 246);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(158, 218);
             this.panel2.TabIndex = 2;
@@ -208,7 +210,7 @@ namespace Library_management.forms.Student
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(158, 164);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -222,7 +224,7 @@ namespace Library_management.forms.Student
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Location = new System.Drawing.Point(221, 246);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(158, 218);
             this.panel3.TabIndex = 3;
@@ -254,7 +256,7 @@ namespace Library_management.forms.Student
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(158, 164);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -268,7 +270,7 @@ namespace Library_management.forms.Student
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Location = new System.Drawing.Point(422, 246);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(158, 218);
             this.panel4.TabIndex = 4;
@@ -300,7 +302,7 @@ namespace Library_management.forms.Student
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(158, 164);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -320,7 +322,7 @@ namespace Library_management.forms.Student
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "mainFrmStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainFrmStudent";
