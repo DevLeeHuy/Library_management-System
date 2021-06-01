@@ -74,5 +74,18 @@ namespace Library_management.models
         {
             return db.fineMoneys.Sum(f => f.fine);
         }
+        public static void fine(int uid, float money)
+        {
+            if (fineDB.getById(uid) != null)
+            {
+                float fine = (float)(fineDB.getById(uid).fine) + money;
+                fineDB.update(uid, fine);
+            }
+            else
+            {
+                float fine = money;
+                fineDB.insert(uid, fine);
+            }
+        }
     }
 }

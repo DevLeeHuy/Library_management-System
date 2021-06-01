@@ -46,7 +46,8 @@ namespace Library_management.forms.Student
                 case "Return":
                     f = new ManageReturn();
                     break;
-                case "STAFF":
+                case "Refresh":
+                    mainFrmStudent_Load(sender,e);
                     break;
                 default:
                     break;

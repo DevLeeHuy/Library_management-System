@@ -58,6 +58,9 @@ namespace Library_management.forms.Teacher
                 case "Library borrow":
                     f = new LibraryBorrow();
                     break;
+                case "Refresh":
+                    mainFrmTeacher_Load(sender,e);
+                    break;
                 default:
                     break;
             }

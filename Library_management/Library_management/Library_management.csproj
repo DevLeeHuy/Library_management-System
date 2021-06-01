@@ -151,6 +151,12 @@
     <Compile Include="forms\Book\ManageReturn.Designer.cs">
       <DependentUpon>ManageReturn.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Book\processReturnBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Book\processReturnBook.designer.cs">
+      <DependentUpon>processReturnBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Book\topList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,10 +305,19 @@
     <Compile Include="shift.cs">
       <DependentUpon>library.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
     <Compile Include="staff.cs">
       <DependentUpon>library.tt</DependentUpon>
     </Compile>
     <Compile Include="staffRole.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>library.tt</DependentUpon>
     </Compile>
     <Compile Include="top3Book_Result.cs">
@@ -331,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Book\ManageReturn.resx">
       <DependentUpon>ManageReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Book\processReturnBook.resx">
+      <DependentUpon>processReturnBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Book\topList.resx">
       <DependentUpon>topList.cs</DependentUpon>

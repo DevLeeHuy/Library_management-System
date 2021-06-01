@@ -16,6 +16,14 @@ namespace Library_management.models
 
             return rs.ToList();
         }
+        public static List<returnBook> getListPending()
+        {
+            var rs = from b in db.returnBooks
+                     where b.pending == false
+                     select b;
+
+            return rs.ToList();
+        }
         public static List<returnBook> getListByUid(int uid)
         {
             var rs = from b in db.returnBooks

@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="LibraryModelStoreContainer" CdmEntityContainer="LibraryEntities">
+    <FunctionImportMapping FunctionImportName="top3Book" FunctionName="LibraryModel.Store.top3Book">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibraryModel.top3Book_Result">
+          <ScalarProperty Name="bid" ColumnName="bid" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="accounts">
       <EntityTypeMapping TypeName="LibraryModel.account">
         <MappingFragment StoreEntitySet="account">
@@ -66,13 +74,13 @@
     <EntitySetMapping Name="returnBooks">
       <EntityTypeMapping TypeName="LibraryModel.returnBook">
         <MappingFragment StoreEntitySet="returnBook">
+          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="pending" ColumnName="pending" />
           <ScalarProperty Name="isLost" ColumnName="isLost" />
           <ScalarProperty Name="isDamaged" ColumnName="isDamaged" />
           <ScalarProperty Name="isExpired" ColumnName="isExpired" />
           <ScalarProperty Name="bid" ColumnName="bid" />
           <ScalarProperty Name="uid" ColumnName="uid" />
-          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -100,6 +108,17 @@
         <MappingFragment StoreEntitySet="staffRole">
           <ScalarProperty Name="roleName" ColumnName="roleName" />
           <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="LibraryModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -135,13 +154,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="top3Book" FunctionName="LibraryModel.Store.top3Book">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="LibraryModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="LibraryModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="LibraryModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="LibraryModel.Store.sp_helpdiagramdefinition">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="LibraryModel.top3Book_Result">
-          <ScalarProperty Name="bid" ColumnName="bid" />
-          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        <ComplexTypeMapping TypeName="LibraryModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="LibraryModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibraryModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="LibraryModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="LibraryModel.Store.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>

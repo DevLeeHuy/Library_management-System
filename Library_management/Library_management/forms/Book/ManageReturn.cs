@@ -121,8 +121,17 @@ namespace Library_management.forms.Book
                     }
                     MessageBox.Show("You are fined because return book after expired date !!!\n Book ID: "+ br.bid, "Return record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                if (!borrowDB.delete(u.id, br.id) || !returnDB.insert(u.id,br.id, exp>0,false))
+                if ( returnDB.insert(u.id, (int)br.bid, exp>0,false) )
                 {
+                    if (!borrowDB.delete(u.id, (int)br.bid))
+                    {
+                        MessageBox.Show("Return book id: " + br.bid + " failed", "Return Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+                else
+                {
+
                     MessageBox.Show("Return book id: " + br.bid + " failed", "Return Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
