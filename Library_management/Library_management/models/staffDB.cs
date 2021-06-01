@@ -33,6 +33,14 @@ namespace Library_management.models
                      select s;
             return rs.ToList();
         }
+        public static staff getByIdInStaff(int id)
+        {
+            var rs = from std in db.staffs
+                     where std.id == id 
+                     select std;
+
+            return rs.SingleOrDefault();
+        }
         public static List<staff> getListStaffByRole(int role)
         {
             var rs = from s in db.staffs
@@ -68,6 +76,56 @@ namespace Library_management.models
         public static int countStaff(List<staff> staffs,int role)
         {
             return staffs.Count(s => s.role == role);
+        }
+
+        public static bool insert( int id, int role,string code)
+        {
+            try
+            {
+
+                db.staffs.Add(new staff()
+                {
+                    id = id,
+                   role = role,
+                   code = code,
+                });
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public static bool delete(int id)
+        {
+            try
+            {
+                staff std = db.staffs.Where(p => p.id == id).SingleOrDefault();
+                db.staffs.Remove(std);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public static bool update(int id, int role,string code)
+        {
+            try
+            {
+                staff std = db.staffs.Find(id);
+                std.role = role;
+                std.code = code;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
     }
 }

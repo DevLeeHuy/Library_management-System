@@ -115,6 +115,15 @@ namespace Library_management.models
                 return false;
             }
         }
+        public static int getGender(int type, string gender)
+        {
+            return db.users.Count(u => u.type == type && u.gender == gender);
+        }
+        public static int getTotal(int type)
+        {
+            return db.users.Count(u => u.type == type);
+        }
+
     }
 }
 

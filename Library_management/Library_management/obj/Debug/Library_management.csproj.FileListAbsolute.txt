@@ -503,3 +503,12 @@ C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_manageme
 C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\bin\Debug\ja\DevExpress.Diagram.v19.2.Core.resources.dll
 C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\bin\Debug\ru\DevExpress.Diagram.v19.2.Core.resources.dll
 C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\obj\Debug\Library_management.Report.User_list.resources
+C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\obj\Debug\Library_management.ManageStaff.resources
+C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\obj\Debug\Library_management.forms.Chart.ChartBook.resources
+C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\obj\Debug\Library_management.forms.Chart.ChartBorrowAnReturn.resources
+C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\obj\Debug\Library_management.forms.Chart.ChartReturnBooks.resources
+C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\obj\Debug\Library_management.forms.Chart.ChartStaff.resources
+C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\obj\Debug\Library_management.forms.Chart.ChartStudent.resources
+C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\obj\Debug\Library_management.forms.Chart.ChartTeacher.resources
+C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\bin\Debug\DevExpress.XtraCharts.v19.2.UI.dll
+C:\Users\Dell\OneDrive\Desktop\interface\Window_Final\Win_final\Library_management\Library_management\bin\Debug\DevExpress.XtraCharts.v19.2.UI.xml

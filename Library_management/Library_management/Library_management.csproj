@@ -49,6 +49,8 @@
     <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.Wizard, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -67,6 +69,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,6 +106,12 @@
     <Compile Include="forms\Admin\mainFrmAdmin.Designer.cs">
       <DependentUpon>mainFrmAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Admin\Manage Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Admin\Manage Staff.Designer.cs">
+      <DependentUpon>Manage Staff.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Book\Category.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +141,42 @@
     </Compile>
     <Compile Include="forms\Book\topList.Designer.cs">
       <DependentUpon>topList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Chart\ChartBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Chart\ChartBook.Designer.cs">
+      <DependentUpon>ChartBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Chart\ChartBorrowAnReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Chart\ChartBorrowAnReturn.Designer.cs">
+      <DependentUpon>ChartBorrowAnReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Chart\ChartReturnBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Chart\ChartReturnBooks.Designer.cs">
+      <DependentUpon>ChartReturnBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Chart\ChartStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Chart\ChartStaff.Designer.cs">
+      <DependentUpon>ChartStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Chart\ChartStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Chart\ChartStudent.Designer.cs">
+      <DependentUpon>ChartStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Chart\ChartTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Chart\ChartTeacher.Designer.cs">
+      <DependentUpon>ChartTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frmRegister.cs">
       <SubType>Form</SubType>
@@ -248,6 +293,9 @@
     <EmbeddedResource Include="forms\Admin\mainFrmAdmin.resx">
       <DependentUpon>mainFrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\Admin\Manage Staff.resx">
+      <DependentUpon>Manage Staff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Book\Category.resx">
       <DependentUpon>Category.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +310,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Book\topList.resx">
       <DependentUpon>topList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Chart\ChartBook.resx">
+      <DependentUpon>ChartBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Chart\ChartBorrowAnReturn.resx">
+      <DependentUpon>ChartBorrowAnReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Chart\ChartReturnBooks.resx">
+      <DependentUpon>ChartReturnBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Chart\ChartStaff.resx">
+      <DependentUpon>ChartStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Chart\ChartStudent.resx">
+      <DependentUpon>ChartStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Chart\ChartTeacher.resx">
+      <DependentUpon>ChartTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>

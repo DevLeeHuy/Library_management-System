@@ -1,5 +1,6 @@
 ﻿using Library_management.forms.Admin;
 using Library_management.forms.Book;
+using Library_management.forms.Chart;
 using Library_management.forms.Schedule;
 using Library_management.forms.Student;
 using Library_management.forms.Teacher;
@@ -22,7 +23,7 @@ namespace Library_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new ChartStudent());
         }
     }
 }
