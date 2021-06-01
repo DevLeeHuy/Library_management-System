@@ -12,6 +12,8 @@ namespace Library_management
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class LibraryEntities : DbContext
     {
@@ -37,5 +39,12 @@ namespace Library_management
         public virtual DbSet<staffRole> staffRoles { get; set; }
         public virtual DbSet<user> users { get; set; }
         public virtual DbSet<userType> userTypes { get; set; }
+        public virtual DbSet<Br_Rt> Br_Rt { get; set; }
+    
+        [DbFunction("LibraryEntities", "top3Book")]
+        public virtual IQueryable<top3Book_Result> top3Book()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<top3Book_Result>("[LibraryEntities].[top3Book]()");
+        }
     }
 }

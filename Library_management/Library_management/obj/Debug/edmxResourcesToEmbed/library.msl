@@ -126,5 +126,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Br_Rt">
+      <EntityTypeMapping TypeName="LibraryModel.Br_Rt">
+        <MappingFragment StoreEntitySet="Br_Rt">
+          <ScalarProperty Name="bid" ColumnName="bid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="top3Book" FunctionName="LibraryModel.Store.top3Book">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibraryModel.top3Book_Result">
+          <ScalarProperty Name="bid" ColumnName="bid" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -13,6 +13,7 @@
     <EntitySet Name="staffRoles" EntityType="LibraryModel.staffRole" />
     <EntitySet Name="users" EntityType="LibraryModel.user" />
     <EntitySet Name="userTypes" EntityType="LibraryModel.userType" />
+    <EntitySet Name="Br_Rt" EntityType="LibraryModel.Br_Rt" />
     <AssociationSet Name="FK__account__id__38996AB5" Association="LibraryModel.FK__account__id__38996AB5">
       <End Role="user" EntitySet="users" />
       <End Role="account" EntitySet="accounts" />
@@ -65,6 +66,7 @@
       <End Role="userType" EntitySet="userTypes" />
       <End Role="user" EntitySet="users" />
     </AssociationSet>
+    <FunctionImport Name="top3Book" IsComposable="true" ReturnType="Collection(LibraryModel.top3Book_Result)" />
   </EntityContainer>
   <EntityType Name="account">
     <Key>
@@ -204,6 +206,14 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="typeName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="users" Relationship="LibraryModel.FK__users__type__35BCFE0A" FromRole="userType" ToRole="user" />
+  </EntityType>
+  <EntityType Name="Br_Rt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="bid" Type="Int32" />
   </EntityType>
   <Association Name="FK__account__id__38996AB5">
     <End Type="LibraryModel.user" Role="user" Multiplicity="1">
@@ -381,4 +391,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="top3Book_Result">
+    <Property Type="Int32" Name="bid" Nullable="true" />
+    <Property Type="Int32" Name="quantity" Nullable="true" />
+  </ComplexType>
 </Schema>

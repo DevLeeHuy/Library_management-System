@@ -8,15 +8,16 @@
         <EntityTypeShape EntityType="LibraryModel.account" Width="1.5" PointX="5.25" PointY="22.75" />
         <EntityTypeShape EntityType="LibraryModel.book" Width="1.5" PointX="3" PointY="3.125" />
         <EntityTypeShape EntityType="LibraryModel.bookCategory" Width="1.5" PointX="0.75" PointY="4.125" />
-        <EntityTypeShape EntityType="LibraryModel.bookOfTeacher" Width="1.5" PointX="5.25" PointY="11.875" />
-        <EntityTypeShape EntityType="LibraryModel.borrow" Width="1.5" PointX="5.25" PointY="5.75" />
-        <EntityTypeShape EntityType="LibraryModel.fineMoney" Width="1.5" PointX="5.25" PointY="16.875" />
+        <EntityTypeShape EntityType="LibraryModel.bookOfTeacher" Width="1.5" PointX="5.25" PointY="5.875" />
+        <EntityTypeShape EntityType="LibraryModel.borrow" Width="1.5" PointX="5.25" PointY="8.75" />
+        <EntityTypeShape EntityType="LibraryModel.fineMoney" Width="1.5" PointX="5.25" PointY="20.375" />
         <EntityTypeShape EntityType="LibraryModel.returnBook" Width="1.5" PointX="8.25" PointY="8.625" />
         <EntityTypeShape EntityType="LibraryModel.shift" Width="1.5" PointX="7.5" PointY="13" />
-        <EntityTypeShape EntityType="LibraryModel.staff" Width="1.5" PointX="5.25" PointY="8.875" />
+        <EntityTypeShape EntityType="LibraryModel.staff" Width="1.5" PointX="5.25" PointY="11.875" />
         <EntityTypeShape EntityType="LibraryModel.staffRole" Width="1.5" PointX="3" PointY="13.125" />
         <EntityTypeShape EntityType="LibraryModel.user" Width="1.5" PointX="3" PointY="7.875" />
         <EntityTypeShape EntityType="LibraryModel.userType" Width="1.5" PointX="0.75" PointY="9.125" />
+        <EntityTypeShape EntityType="LibraryModel.Br_Rt" Width="1.5" PointX="0.75" PointY="0.75" />
         <AssociationConnector Association="LibraryModel.FK__account__id__38996AB5" />
         <AssociationConnector Association="LibraryModel.FK__book__categoryId__47DBAE45" />
         <AssociationConnector Association="LibraryModel.FK__bookOfTeach__bid__656C112C" />

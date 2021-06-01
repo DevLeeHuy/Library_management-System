@@ -172,5 +172,13 @@ namespace Library_management.models
             book b = db.books.Where(p => p.title == title).SingleOrDefault();
             return b.id;
         }
+
+        public static List<int?> getTop3()
+        {
+            var rs = from b in db.top3Book()
+                     orderby b.quantity descending
+                     select b.bid;
+            return rs.Take(3).ToList();
+        }
     }
 }

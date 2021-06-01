@@ -16,5 +16,15 @@ namespace Library_management.forms.Chart
         {
             InitializeComponent();
         }
+
+        private void dashboardDesigner1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dashboardViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -113,6 +113,16 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="typeName" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Library_management.dbo.Br_Rt' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Br_Rt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="uid" Type="int" />
+    <Property Name="bid" Type="int" />
+  </EntityType>
   <Association Name="FK__account__id__38996AB5">
     <End Role="users" Type="Self.users" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -289,6 +299,16 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="top3Book" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="bid" Type="int" />
+          <Property Name="quantity" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
   <EntityContainer Name="LibraryModelStoreContainer">
     <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="book" EntityType="Self.book" Schema="dbo" store:Type="Tables" />
@@ -302,6 +322,13 @@
     <EntitySet Name="staffRole" EntityType="Self.staffRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="userType" EntityType="Self.userType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Br_Rt" EntityType="Self.Br_Rt" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Br_Rt].[id] AS [id], 
+    [Br_Rt].[uid] AS [uid], 
+    [Br_Rt].[bid] AS [bid]
+    FROM [dbo].[Br_Rt] AS [Br_Rt]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__account__id__38996AB5" Association="Self.FK__account__id__38996AB5">
       <End Role="users" EntitySet="users" />
       <End Role="account" EntitySet="account" />

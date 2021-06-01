@@ -13,6 +13,12 @@ namespace Library_management.models
         public static int staffType = 4;
         public static int stdType = 3;
         public static int teacherType = 2;
+        public static List<user> getList()
+        {
+            var rs = from u in db.users
+                     select u;
+            return rs.ToList();
+        }
         public static user getById(int id)
         {
             try

@@ -126,5 +126,11 @@ namespace Library_management
                 txtPassword.ForeColor = Color.Black;
             }
         }
+
+        private void linkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form regis = new frmRegister();
+            regis.ShowDialog();
+        }
     }
 }

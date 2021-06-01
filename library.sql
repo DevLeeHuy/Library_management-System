@@ -55,3 +55,10 @@ create table fineMoney(
 	id int primary key foreign key references users(id) on delete cascade on update cascade,
 	fine float
 )
+
+create view as Br_Rt
+(select id,uid,bid from borrow) UNION (select id,uid,bid from returnBook)
+
+select bid, count(uid) 
+from 
+group by bid
