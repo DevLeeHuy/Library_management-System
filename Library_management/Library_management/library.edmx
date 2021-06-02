@@ -81,6 +81,7 @@
           <Property Name="sid" Type="int" />
           <Property Name="ca" Type="int" />
           <Property Name="thu" Type="int" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="staff">
           <Key>
@@ -315,6 +316,17 @@ warning 6002: The table/view 'Library_management.dbo.Br_Rt' does not have a prim
           </ReferentialConstraint>
         </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="getAttendance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="sid" Type="int" />
+                <Property Name="status" Type="varchar" MaxLength="50" />
+                <Property Name="times" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -531,6 +543,7 @@ warning 6002: The table/view 'Library_management.dbo.Br_Rt' does not have a prim
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="getAttendance" IsComposable="true" ReturnType="Collection(LibraryModel.getAttendance_Result)" />
         </EntityContainer>
         <ComplexType Name="top3Book_Result">
           <Property Type="Int32" Name="bid" Nullable="true" />
@@ -626,6 +639,7 @@ warning 6002: The table/view 'Library_management.dbo.Br_Rt' does not have a prim
           <Property Name="ca" Type="Int32" />
           <Property Name="thu" Type="Int32" />
           <NavigationProperty Name="staff" Relationship="LibraryModel.FK__shifts__sid__7E37BEF6" FromRole="shift" ToRole="staff" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="staff">
           <Key>
@@ -880,6 +894,11 @@ warning 6002: The table/view 'Library_management.dbo.Br_Rt' does not have a prim
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="getAttendance_Result">
+          <Property Type="Int32" Name="sid" Nullable="true" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="times" Nullable="true" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -972,6 +991,7 @@ warning 6002: The table/view 'Library_management.dbo.Br_Rt' does not have a prim
           <EntitySetMapping Name="shifts">
             <EntityTypeMapping TypeName="LibraryModel.shift">
               <MappingFragment StoreEntitySet="shifts">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="thu" ColumnName="thu" />
                 <ScalarProperty Name="ca" ColumnName="ca" />
                 <ScalarProperty Name="sid" ColumnName="sid" />
@@ -1063,6 +1083,15 @@ warning 6002: The table/view 'Library_management.dbo.Br_Rt' does not have a prim
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="LibraryModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="LibraryModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="getAttendance" FunctionName="LibraryModel.Store.getAttendance">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LibraryModel.getAttendance_Result">
+                <ScalarProperty Name="sid" ColumnName="sid" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="times" ColumnName="times" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -115,6 +115,18 @@
     <Compile Include="fineMoney.cs">
       <DependentUpon>library.tt</DependentUpon>
     </Compile>
+    <Compile Include="forms\Admin\attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Admin\attendance.Designer.cs">
+      <DependentUpon>attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Admin\CheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Admin\CheckIn.Designer.cs">
+      <DependentUpon>CheckIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Admin\mainFrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +273,9 @@
     <Compile Include="forms\Teacher\TeacherBook.Designer.cs">
       <DependentUpon>TeacherBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="getAttendance_Result.cs">
+      <DependentUpon>library.tt</DependentUpon>
+    </Compile>
     <Compile Include="library.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -335,6 +350,12 @@
     <Compile Include="userType.cs">
       <DependentUpon>library.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="forms\Admin\attendance.resx">
+      <DependentUpon>attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Admin\CheckIn.resx">
+      <DependentUpon>CheckIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Admin\mainFrmAdmin.resx">
       <DependentUpon>mainFrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -459,6 +480,7 @@
       <DependentUpon>library.edmx</DependentUpon>
       <LastGenOutput>library.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\image_processing20191025-19942-14gi0n7.gif" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

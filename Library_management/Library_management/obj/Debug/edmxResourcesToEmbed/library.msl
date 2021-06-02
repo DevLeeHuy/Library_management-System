@@ -87,6 +87,7 @@
     <EntitySetMapping Name="shifts">
       <EntityTypeMapping TypeName="LibraryModel.shift">
         <MappingFragment StoreEntitySet="shifts">
+          <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="thu" ColumnName="thu" />
           <ScalarProperty Name="ca" ColumnName="ca" />
           <ScalarProperty Name="sid" ColumnName="sid" />
@@ -178,5 +179,14 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="LibraryModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="LibraryModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="getAttendance" FunctionName="LibraryModel.Store.getAttendance">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LibraryModel.getAttendance_Result">
+          <ScalarProperty Name="sid" ColumnName="sid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="times" ColumnName="times" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

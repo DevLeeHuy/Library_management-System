@@ -50,6 +50,7 @@ namespace Library_management
             this.errorPass = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorUname = new System.Windows.Forms.ErrorProvider(this.components);
             this.linkRegister = new System.Windows.Forms.LinkLabel();
+            this.checkLink = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
@@ -65,7 +66,7 @@ namespace Library_management
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.closeBtn);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(323, 69);
             this.panel1.TabIndex = 0;
@@ -87,7 +88,7 @@ namespace Library_management
             this.closeBtn.BackColor = System.Drawing.Color.Black;
             this.closeBtn.ForeColor = System.Drawing.Color.Red;
             this.closeBtn.Location = new System.Drawing.Point(285, 10);
-            this.closeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.closeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(28, 24);
             this.closeBtn.TabIndex = 1;
@@ -102,7 +103,7 @@ namespace Library_management
             this.txtUsername.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.Silver;
             this.txtUsername.Location = new System.Drawing.Point(115, 267);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(134, 22);
@@ -115,7 +116,7 @@ namespace Library_management
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(73, 257);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(38, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -126,7 +127,7 @@ namespace Library_management
             // 
             this.picLoading.Image = ((System.Drawing.Image)(resources.GetObject("picLoading.Image")));
             this.picLoading.Location = new System.Drawing.Point(0, 135);
-            this.picLoading.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picLoading.Margin = new System.Windows.Forms.Padding(2);
             this.picLoading.Name = "picLoading";
             this.picLoading.Size = new System.Drawing.Size(323, 54);
             this.picLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,7 +140,7 @@ namespace Library_management
             this.btnLogin.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogin.Location = new System.Drawing.Point(73, 377);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(176, 37);
             this.btnLogin.TabIndex = 9;
@@ -162,7 +163,7 @@ namespace Library_management
             // 
             this.rdoBtnStudent.AutoSize = true;
             this.rdoBtnStudent.Location = new System.Drawing.Point(50, 208);
-            this.rdoBtnStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoBtnStudent.Margin = new System.Windows.Forms.Padding(2);
             this.rdoBtnStudent.Name = "rdoBtnStudent";
             this.rdoBtnStudent.Size = new System.Drawing.Size(62, 17);
             this.rdoBtnStudent.TabIndex = 12;
@@ -173,7 +174,7 @@ namespace Library_management
             // 
             this.rdoBtnTeacher.AutoSize = true;
             this.rdoBtnTeacher.Location = new System.Drawing.Point(133, 208);
-            this.rdoBtnTeacher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoBtnTeacher.Margin = new System.Windows.Forms.Padding(2);
             this.rdoBtnTeacher.Name = "rdoBtnTeacher";
             this.rdoBtnTeacher.Size = new System.Drawing.Size(65, 17);
             this.rdoBtnTeacher.TabIndex = 13;
@@ -185,7 +186,7 @@ namespace Library_management
             this.rdoBtnAdmin.AutoSize = true;
             this.rdoBtnAdmin.Checked = true;
             this.rdoBtnAdmin.Location = new System.Drawing.Point(218, 208);
-            this.rdoBtnAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoBtnAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.rdoBtnAdmin.Name = "rdoBtnAdmin";
             this.rdoBtnAdmin.Size = new System.Drawing.Size(54, 17);
             this.rdoBtnAdmin.TabIndex = 14;
@@ -200,7 +201,7 @@ namespace Library_management
             this.txtPassword.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F);
             this.txtPassword.ForeColor = System.Drawing.Color.Silver;
             this.txtPassword.Location = new System.Drawing.Point(113, 327);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -215,7 +216,7 @@ namespace Library_management
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(116, 288);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(128, 2);
             this.panel2.TabIndex = 15;
@@ -224,7 +225,7 @@ namespace Library_management
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(116, 350);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(128, 2);
             this.panel3.TabIndex = 16;
@@ -233,7 +234,7 @@ namespace Library_management
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(82, 322);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(27, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -244,7 +245,7 @@ namespace Library_management
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(115, 73);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(94, 76);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -271,12 +272,25 @@ namespace Library_management
             this.linkRegister.Text = "Sign up now";
             this.linkRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRegister_LinkClicked);
             // 
+            // checkLink
+            // 
+            this.checkLink.AutoSize = true;
+            this.checkLink.Location = new System.Drawing.Point(112, 432);
+            this.checkLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.checkLink.Name = "checkLink";
+            this.checkLink.Size = new System.Drawing.Size(96, 13);
+            this.checkLink.TabIndex = 20;
+            this.checkLink.TabStop = true;
+            this.checkLink.Text = "Check Attendance";
+            this.checkLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.checkLink_LinkClicked);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(322, 529);
+            this.Controls.Add(this.checkLink);
             this.Controls.Add(this.linkRegister);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -295,7 +309,7 @@ namespace Library_management
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
@@ -334,6 +348,7 @@ namespace Library_management
         private System.Windows.Forms.ErrorProvider errorPass;
         private System.Windows.Forms.LinkLabel linkRegister;
         private System.Windows.Forms.ErrorProvider errorUname;
+        private System.Windows.Forms.LinkLabel checkLink;
     }
 }
 

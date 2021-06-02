@@ -98,6 +98,7 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="getAttendance" IsComposable="true" ReturnType="Collection(LibraryModel.getAttendance_Result)" />
   </EntityContainer>
   <ComplexType Name="top3Book_Result">
     <Property Type="Int32" Name="bid" Nullable="true" />
@@ -193,6 +194,7 @@
     <Property Name="ca" Type="Int32" />
     <Property Name="thu" Type="Int32" />
     <NavigationProperty Name="staff" Relationship="LibraryModel.FK__shifts__sid__7E37BEF6" FromRole="shift" ToRole="staff" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="staff">
     <Key>
@@ -446,5 +448,10 @@
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getAttendance_Result">
+    <Property Type="Int32" Name="sid" Nullable="true" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="times" Nullable="true" />
   </ComplexType>
 </Schema>

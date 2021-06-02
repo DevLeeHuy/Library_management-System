@@ -18,6 +18,7 @@ namespace Library_management
         public Nullable<int> sid { get; set; }
         public Nullable<int> ca { get; set; }
         public Nullable<int> thu { get; set; }
+        public string status { get; set; }
     
         public virtual staff staff { get; set; }
     }

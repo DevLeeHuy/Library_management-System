@@ -150,5 +150,11 @@ namespace Library_management
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        [DbFunction("LibraryEntities", "getAttendance")]
+        public virtual IQueryable<getAttendance_Result> getAttendance()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<getAttendance_Result>("[LibraryEntities].[getAttendance]()");
+        }
     }
 }

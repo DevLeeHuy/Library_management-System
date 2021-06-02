@@ -37,7 +37,8 @@ namespace Library_management.forms.Schedule
                         {
                            sid = staff.id,
                            ca = shift.ca,
-                           thu = shift.thu
+                           thu = shift.thu,
+                           status = "absence"
                         });
                         db.SaveChanges();
                 }

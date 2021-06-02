@@ -132,5 +132,11 @@ namespace Library_management
             Form regis = new frmRegister();
             regis.ShowDialog();
         }
+
+        private void checkLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form f = new CheckIn();
+            f.ShowDialog();
+        }
     }
 }

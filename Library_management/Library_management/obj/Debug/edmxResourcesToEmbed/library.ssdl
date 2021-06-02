@@ -76,6 +76,7 @@
     <Property Name="sid" Type="int" />
     <Property Name="ca" Type="int" />
     <Property Name="thu" Type="int" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="staff">
     <Key>
@@ -310,6 +311,17 @@ warning 6002: The table/view 'Library_management.dbo.Br_Rt' does not have a prim
     </ReferentialConstraint>
   </Association>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="getAttendance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="sid" Type="int" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="times" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
