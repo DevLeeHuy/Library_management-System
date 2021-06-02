@@ -75,7 +75,58 @@ namespace Library_management
 
         private void LibraryBorrow_Load(object sender, EventArgs e)
         {
+            gvBook.DataSource = bookDB.getList();
+            cboCategory.DataSource = categoryDB.getList();
+            cboCategory.DisplayMember = "catName";
+            cboCategory.ValueMember = "id";
+        }
 
+        private void windowsUIButtonPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            try
+            {
+                String imageLocation = "";
+                OpenFileDialog dialog = new OpenFileDialog();
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    imageLocation = dialog.FileName;
+                }
+                Avatar.ImageLocation = imageLocation;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Upload image unsuccessfully!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gvBook_Click(object sender, EventArgs e)
+        {
+
+            txtId.DataBindings.Clear();
+            txtId.DataBindings.Add("Text", gvBook.DataSource, "id");
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+            getInfo(Convert.ToInt32(txtId.Text));
+        }
+        void getInfo(int id)
+        {
+            book b = bookDB.getById(id);
+            if (b != null)
+            {
+                txtTitle.Text = b.title;
+                txtDesc.Text = b.description;
+                txtAuthor.Text = b.author;
+                txtPublisher.Text = b.publisher;
+                dtpDatePublish.Value = (DateTime)b.pubDate;
+                cboCategory.SelectedValue = b.categoryId;
+                Avatar.Image = Image.FromStream(new MemoryStream(b.img));
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy sách có mã " + id, "Không tìm thấy");
+            }
         }
     }
 }

@@ -111,40 +111,62 @@ namespace Library_management.forms.Teacher
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            string fname = txtFname.Text;
-            string lname = txtLname.Text;
-            int id = Int32.Parse(txtId.Text);
-            DateTime birth = birthPicker.Value;
-
-            int bornYear = birthPicker.Value.Year;
-            int thisYear = DateTime.Now.Year;
-            if (thisYear - bornYear < 10 || thisYear - bornYear > 100)
+            try
             {
-                MessageBox.Show("The student age must be between 10 and 100 years old", "Invalid birth date", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                string phone = txtPhone.Text;
-                string address = txtAddress.Text;
+                string fname = txtFname.Text;
+                string lname = txtLname.Text;
+                int id = Int32.Parse(txtId.Text);
+                DateTime birth = birthPicker.Value;
 
-
-                //File.Copy(Avatar.ImageLocation, Path.Combine(Application.StartupPath + "\\Images\\", Path.GetFileName(Avatar.ImageLocation)), true);
-                MemoryStream pic = new MemoryStream();
-                Avatar.Image.Save(pic, Avatar.Image.RawFormat);
-                RadioButton ckb = null;
-                foreach (RadioButton item in genderBox.Controls)
+                int bornYear = birthPicker.Value.Year;
+                int thisYear = DateTime.Now.Year;
+                if (thisYear - bornYear < 10 || thisYear - bornYear > 100)
                 {
-                    if (item != null)
-                        if (item.Checked)
-                        {
-                            ckb = item;
-                            break;
-                        }
+                    MessageBox.Show("The student age must be between 10 and 100 years old", "Invalid birth date", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                string gender = ckb.Text == "male" ? "male" : "female";
-                if (userDB.updateUser(id, fname, lname, birth, gender, phone, address, pic))
+                else
                 {
-                    MessageBox.Show("Done", "Update successfully");
+                    string phone = txtPhone.Text;
+                    string address = txtAddress.Text;
+
+
+                    //File.Copy(Avatar.ImageLocation, Path.Combine(Application.StartupPath + "\\Images\\", Path.GetFileName(Avatar.ImageLocation)), true);
+                    MemoryStream pic = new MemoryStream();
+                    Avatar.Image.Save(pic, Avatar.Image.RawFormat);
+                    RadioButton ckb = null;
+                    foreach (RadioButton item in genderBox.Controls)
+                    {
+                        if (item != null)
+                            if (item.Checked)
+                            {
+                                ckb = item;
+                                break;
+                            }
+                    }
+                    string gender = ckb.Text == "male" ? "male" : "female";
+                    if (userDB.updateUser(id, fname, lname, birth, gender, phone, address, pic))
+                    {
+                        MessageBox.Show("Done", "Update successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something wrong ", "Unsuccessful");
+                    }
+                    ManageTeacher_Load(sender, e);
+                }
+            }
+            catch { }
+        }
+
+        private void RemoveBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Int32.Parse(txtId.Text);
+                if (userDB.deleteUser(id))
+                {
+                    MessageBox.Show("Done", "Remove successfully");
+                    this.Close();
                 }
                 else
                 {
@@ -152,21 +174,7 @@ namespace Library_management.forms.Teacher
                 }
                 ManageTeacher_Load(sender, e);
             }
-        }
-
-        private void RemoveBtn_Click(object sender, EventArgs e)
-        {
-            int id = Int32.Parse(txtId.Text);
-            if (userDB.deleteUser(id))
-            {
-                MessageBox.Show("Done", "Remove successfully");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Something wrong ", "Unsuccessful");
-            }
-            ManageTeacher_Load(sender, e);
+            catch { }
 
         }
 

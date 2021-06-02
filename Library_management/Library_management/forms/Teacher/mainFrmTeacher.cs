@@ -51,12 +51,19 @@ namespace Library_management.forms.Teacher
             {
                 case "Borrow":
                     f = new ManageBorrow();
+                    f.ShowDialog();
                     break;
                 case "Return":
-                    f = new Form();
+                    f = new ManageReturn();
+                    f.ShowDialog();
                     break;
                 case "Library borrow":
                     f = new LibraryBorrow();
+                    f.ShowDialog();
+                    break;
+                case "View Book":
+                    f = new TeacherBook();
+                    f.ShowDialog();
                     break;
                 case "Refresh":
                     mainFrmTeacher_Load(sender,e);
@@ -64,7 +71,7 @@ namespace Library_management.forms.Teacher
                 default:
                     break;
             }
-            f.ShowDialog();
+            
         }
 
         private void btnLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

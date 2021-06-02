@@ -59,5 +59,15 @@ namespace Library_management.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_processing20191025_19942_14gi0n7 {
+            get {
+                object obj = ResourceManager.GetObject("image_processing20191025-19942-14gi0n7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

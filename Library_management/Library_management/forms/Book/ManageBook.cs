@@ -54,6 +54,10 @@ namespace Library_management.forms.Book
                 case "UPLOAD":
                     upload();
                     break;
+                case "MANAGE CATEGORIES":
+                    Form f = new Category();
+                    f.ShowDialog();
+                    break;
                 default:
                     break;
             }
@@ -62,44 +66,56 @@ namespace Library_management.forms.Book
         }
         void addBook()
         {
-            MemoryStream pic = new MemoryStream();
-            Avatar.Image.Save(pic, Avatar.Image.RawFormat);
-            if (bookDB.insert(txtTitle.Text, txtDesc.Text, txtAuthor.Text, dtpDatePublish.Value, txtPublisher.Text,
-                                Convert.ToInt32(cboCategory.SelectedValue), Convert.ToInt32(txtQuantity.Text), pic, Convert.ToInt32(txtPrice.Text)))
+            try
             {
-                MessageBox.Show("Successfully Added", " Book Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MemoryStream pic = new MemoryStream();
+                Avatar.Image.Save(pic, Avatar.Image.RawFormat);
+                if (bookDB.insert(txtTitle.Text, txtDesc.Text, txtAuthor.Text, dtpDatePublish.Value, txtPublisher.Text,
+                                    Convert.ToInt32(cboCategory.SelectedValue), Convert.ToInt32(txtQuantity.Text), pic, Convert.ToInt32(txtPrice.Text)))
+                {
+                    MessageBox.Show("Successfully Added", " Book Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Add failed", "Book Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Add failed", "Book Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch { }
         }
         void deleteBook()
         {
-            int id = Convert.ToInt32(txtId.Text);
-            if (bookDB.delete(id))
+            try
             {
-                MessageBox.Show("Successfully Remove", " Book Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int id = Convert.ToInt32(txtId.Text);
+                if (bookDB.delete(id))
+                {
+                    MessageBox.Show("Successfully Remove", " Book Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Remove failed", "Book Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Remove failed", "Book Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch { }
         }
         void updateBook()
         {
-            MemoryStream pic = new MemoryStream();
-            Avatar.Image.Save(pic, Avatar.Image.RawFormat);
-            int id = Convert.ToInt32(txtId.Text);
-            if (bookDB.update(id, txtTitle.Text, txtDesc.Text, txtAuthor.Text, dtpDatePublish.Value, txtPublisher.Text,
-                             Convert.ToInt32(cboCategory.SelectedValue), Convert.ToInt32(txtQuantity.Text), pic, Convert.ToInt32(txtPrice.Text)))
+            try
             {
-                MessageBox.Show("Successfully Updated", " Book Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MemoryStream pic = new MemoryStream();
+                Avatar.Image.Save(pic, Avatar.Image.RawFormat);
+                int id = Convert.ToInt32(txtId.Text);
+                if (bookDB.update(id, txtTitle.Text, txtDesc.Text, txtAuthor.Text, dtpDatePublish.Value, txtPublisher.Text,
+                                 Convert.ToInt32(cboCategory.SelectedValue), Convert.ToInt32(txtQuantity.Text), pic, Convert.ToInt32(txtPrice.Text)))
+                {
+                    MessageBox.Show("Successfully Updated", " Book Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Updated failed", "Book Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Updated failed", "Book Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch { }
         }
         void getInfo(int id)
         {

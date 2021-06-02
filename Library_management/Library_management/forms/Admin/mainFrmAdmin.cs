@@ -2,6 +2,7 @@
 using Library_management.config;
 using Library_management.forms.Book;
 using Library_management.forms.Chart;
+using Library_management.forms.Schedule;
 using Library_management.forms.Student;
 using Library_management.forms.Teacher;
 using Library_management.models;
@@ -52,18 +53,23 @@ namespace Library_management.forms.Admin
             {
                 case "STUDENT":
                     f = new ManageStd();
+                    f.ShowDialog();
                     break;
                 case "TEACHER":
                     f = new ManageTeacher();
+                    f.ShowDialog();
                     break;
                 case "STAFF":
                     f = new ManageStaff();
+                    f.ShowDialog();
                     break;
                 case "BOOK":
                     f = new ManageBook();
+                    f.ShowDialog();
                     break;
                 case "RETURN":
                     f = new processReturnBook();
+                    f.ShowDialog();
                     break;
                 case "PRINT USERS":
                     printUser();
@@ -71,10 +77,14 @@ namespace Library_management.forms.Admin
                 case "PRINT BOOK":
                     printBook();
                     break;
+                case "SCHEDULE":
+                    f= new frmSchedule();
+                    f.ShowDialog();
+                    break;
                 default:
                     break;
             }
-            f.ShowDialog();
+            
         }
 
         private void mainFrmAdmin_Load(object sender, EventArgs e)
@@ -119,6 +129,11 @@ namespace Library_management.forms.Admin
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            mainFrmAdmin_Load(sender, e);
         }
     }
 }

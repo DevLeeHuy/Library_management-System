@@ -42,9 +42,11 @@ namespace Library_management.forms.Student
             {
                 case "Borrow":
                     f = new ManageBorrow();
+                    f.ShowDialog();
                     break;
                 case "Return":
                     f = new ManageReturn();
+                    f.ShowDialog();
                     break;
                 case "Refresh":
                     mainFrmStudent_Load(sender,e);
@@ -52,7 +54,7 @@ namespace Library_management.forms.Student
                 default:
                     break;
             }
-            f.ShowDialog();
+           
         }
 
         private void mainFrmStudent_Load(object sender, EventArgs e)

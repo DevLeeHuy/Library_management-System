@@ -55,86 +55,94 @@ namespace Library_management.forms.Book
         }
         void returnBook()
         {
-            int exp = DateTime.Compare(DateTime.Now, dtpReturnDate.Value);
-            if (!cbLost.Checked)
+            try
             {
-                if (exp > 0 && u.type != 2)
+                int exp = DateTime.Compare(DateTime.Now, dtpReturnDate.Value);
+                if (!cbLost.Checked)
                 {
-                    if (fineDB.getById(u.id) != null)
+                    if (exp > 0 && u.type != 2)
                     {
-                        float fine = (float)(fineDB.getById(u.id).fine) + expFine;
-                        fineDB.update(u.id, fine);
-                    }
-                    else
-                    {
-                        float fine =  expFine;
-                        fineDB.insert(u.id, fine);
-                    }
-                    MessageBox.Show("You are fined because return book after expired date !!!", "Return record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    
-                }
-            }
-            else
-            {
-                if(u.type != 2)
-                {
-                    if (fineDB.getById(u.id) != null)
-                    {
-                        float fine = (float)((float)(fineDB.getById(u.id).fine) + b.price);
-                        fineDB.update(u.id, fine);
-                    }
-                    else
-                    {
-                        float fine = (float)b.price;
-                        fineDB.insert(u.id, fine);
-                    }
-                    MessageBox.Show("You are fined because because you lost the book !!!", "Return record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
-            }
-            if (borrowDB.delete(u.id, b.id) && returnDB.insert(u.id,b.id,exp>0,cbLost.Checked))
-            {
-                MessageBox.Show("Successfully return", " Return Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Return failed", "Return Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        void returnAllBook()
-        {
-            List<borrow> books = borrowDB.getListByUid(u.id);
-            foreach (borrow br in books)
-            {
-                int exp = DateTime.Compare(DateTime.Now, (DateTime)br.expired);
-                if (exp > 0)
-                {
-                    if (fineDB.getById(u.id) != null)
-                    {
-                        float fine = (float)(fineDB.getById(u.id).fine) + expFine;
-                        fineDB.update(u.id, fine);
-                    }
-                    else
-                    {
-                        float fine =  expFine;
-                        fineDB.insert(u.id, fine);
-                    }
-                    MessageBox.Show("You are fined because return book after expired date !!!\n Book ID: "+ br.bid, "Return record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                if ( returnDB.insert(u.id, (int)br.bid, exp>0,false) )
-                {
-                    if (!borrowDB.delete(u.id, (int)br.bid))
-                    {
-                        MessageBox.Show("Return book id: " + br.bid + " failed", "Return Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (fineDB.getById(u.id) != null)
+                        {
+                            float fine = (float)(fineDB.getById(u.id).fine) + expFine;
+                            fineDB.update(u.id, fine);
+                        }
+                        else
+                        {
+                            float fine = expFine;
+                            fineDB.insert(u.id, fine);
+                        }
+                        MessageBox.Show("You are fined because return book after expired date !!!", "Return record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
                 else
                 {
+                    if (u.type != 2)
+                    {
+                        if (fineDB.getById(u.id) != null)
+                        {
+                            float fine = (float)((float)(fineDB.getById(u.id).fine) + b.price);
+                            fineDB.update(u.id, fine);
+                        }
+                        else
+                        {
+                            float fine = (float)b.price;
+                            fineDB.insert(u.id, fine);
+                        }
+                        MessageBox.Show("You are fined because because you lost the book !!!", "Return record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
 
-                    MessageBox.Show("Return book id: " + br.bid + " failed", "Return Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                if (returnDB.insert(u.id, b.id, exp > 0, cbLost.Checked) && borrowDB.delete(u.id, b.id))
+                {
+                    MessageBox.Show("Successfully return", " Return Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Return failed", "Return Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            catch { }
+        }
+        void returnAllBook()
+        {
+            try
+            {
+                List<borrow> books = borrowDB.getListByUid(u.id);
+                foreach (borrow br in books)
+                {
+                    int exp = DateTime.Compare(DateTime.Now, (DateTime)br.expired);
+                    if (exp > 0)
+                    {
+                        if (fineDB.getById(u.id) != null)
+                        {
+                            float fine = (float)(fineDB.getById(u.id).fine) + expFine;
+                            fineDB.update(u.id, fine);
+                        }
+                        else
+                        {
+                            float fine = expFine;
+                            fineDB.insert(u.id, fine);
+                        }
+                        MessageBox.Show("You are fined because return book after expired date !!!\n Book ID: " + br.bid, "Return record", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    if (returnDB.insert(u.id, (int)br.bid, exp > 0, false))
+                    {
+                        if (!borrowDB.delete(u.id, (int)br.bid))
+                        {
+                            MessageBox.Show("Return book id: " + br.bid + " failed", "Return Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Return book id: " + br.bid + " failed", "Return Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch { }
         }
 
         private void txtBookID_TextChanged(object sender, EventArgs e)

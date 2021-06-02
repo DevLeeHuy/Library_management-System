@@ -255,6 +255,12 @@
     <Compile Include="forms\Teacher\ManageTeacher.Designer.cs">
       <DependentUpon>ManageTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Teacher\TeacherBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Teacher\TeacherBook.Designer.cs">
+      <DependentUpon>TeacherBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="library.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -400,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Teacher\LibraryBorrow.resx">
       <DependentUpon>LibraryBorrow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Teacher\TeacherBook.resx">
+      <DependentUpon>TeacherBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

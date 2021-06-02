@@ -69,7 +69,9 @@ namespace Library_management.forms.Book
                 case "Cancel":
                     this.Close();
                     break;
-                case "Print":
+                case "View Borrowed":
+                    Form f = new ManageReturn();
+                    f.Show();
                     break;
                 default:
                     break;
@@ -78,15 +80,19 @@ namespace Library_management.forms.Book
         }
         void borrow()
         {
-            if (borrowDB.insert(u.id, Convert.ToInt32(txtBookID.Text), dtpBorrowDate.Value, dtpExpiredDate.Value))
+            try
             {
-                bookDB.updateQuantity(Convert.ToInt32(txtBookID.Text), -1);
-                MessageBox.Show("Borrow successfully", " Borrow Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (borrowDB.insert(u.id, Convert.ToInt32(txtBookID.Text), dtpBorrowDate.Value, dtpExpiredDate.Value))
+                {
+                    bookDB.updateQuantity(Convert.ToInt32(txtBookID.Text), -1);
+                    MessageBox.Show("Borrow successfully", " Borrow Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Borrow failed", "Book Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Borrow failed", "Book Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch { }
            
         }
         void print() { }

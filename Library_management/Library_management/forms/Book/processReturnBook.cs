@@ -79,30 +79,34 @@ namespace Library_management.forms.Book
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            int id = Convert.ToInt32(txtRid.Text);
-            int uid = Convert.ToInt32(txtUid.Text);
-            book b = bookDB.getById(Convert.ToInt32(txtIDBook.Text));
-            if (e.Button.Properties.Caption == "CONFIRM")
+            try
             {
-                if (returnDB.updateStatus(id, ckDamage.Checked, ckLost.Checked))
+                int id = Convert.ToInt32(txtRid.Text);
+                int uid = Convert.ToInt32(txtUid.Text);
+                book b = bookDB.getById(Convert.ToInt32(txtIDBook.Text));
+                if (e.Button.Properties.Caption == "CONFIRM")
                 {
-                    if (ckLost.Checked)
+                    if (returnDB.updateStatus(id, ckDamage.Checked, ckLost.Checked))
                     {
-                        fineDB.fine(uid,(float)b.price);
+                        if (ckLost.Checked)
+                        {
+                            fineDB.fine(uid, (float)b.price);
+                        }
+                        else
+                        {
+                            fineDB.fine(uid, (float)b.price / 2);
+                        }
+                        processReturnBook_Load(sender, e);
                     }
                     else
                     {
-                        fineDB.fine(uid, (float)b.price / 2);
+                        MessageBox.Show("Đã có lỗi không mong muốn");
                     }
-                    processReturnBook_Load(sender, e);
                 }
                 else
-                {
-                    MessageBox.Show("Đã có lỗi không mong muốn");
-                }
+                    this.Close();
             }
-            else
-                this.Close();
+            catch { }
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

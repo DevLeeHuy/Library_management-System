@@ -98,5 +98,10 @@ namespace Library_management.forms.Schedule
             }
             db.Database.ExecuteSqlCommand("truncate table shifts");
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
