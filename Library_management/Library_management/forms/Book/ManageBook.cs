@@ -128,6 +128,8 @@ namespace Library_management.forms.Book
                 txtPublisher.Text = b.publisher;
                 dtpDatePublish.Value = (DateTime)b.pubDate;
                 cboCategory.SelectedValue = b.categoryId;
+                txtQuantity.Text = b.quantity.ToString();
+                txtPrice.Text = b.price.ToString();
                 Avatar.Image = Image.FromStream(new MemoryStream(b.img));
             }
             else

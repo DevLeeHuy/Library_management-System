@@ -92,13 +92,14 @@ namespace Library_management.forms.Teacher
                     {
                         MessageBox.Show("Something wrong ", "Unsuccessful");
                     }
-                    ManageTeacher_Load(sender, e);
+                    
                 }
             }
             catch
             {
                 MessageBox.Show("Something was wrong!!!");
             }
+            ManageTeacher_Load(sender, e);
         }
 
         private void ManageTeacher_Load(object sender, EventArgs e)
@@ -152,10 +153,11 @@ namespace Library_management.forms.Teacher
                     {
                         MessageBox.Show("Something wrong ", "Unsuccessful");
                     }
-                    ManageTeacher_Load(sender, e);
+                    
                 }
             }
             catch { }
+            ManageTeacher_Load(sender, e);
         }
 
         private void RemoveBtn_Click(object sender, EventArgs e)
@@ -172,9 +174,9 @@ namespace Library_management.forms.Teacher
                 {
                     MessageBox.Show("Something wrong ", "Unsuccessful");
                 }
-                ManageTeacher_Load(sender, e);
             }
             catch { }
+            ManageTeacher_Load(sender, e);
 
         }
 

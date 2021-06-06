@@ -60,11 +60,14 @@ namespace Library_management.forms.Book
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.closeBtn);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(602, 117);
             this.panel1.TabIndex = 0;
@@ -86,7 +89,7 @@ namespace Library_management.forms.Book
             this.closeBtn.BackColor = System.Drawing.Color.Black;
             this.closeBtn.ForeColor = System.Drawing.Color.Red;
             this.closeBtn.Location = new System.Drawing.Point(550, 20);
-            this.closeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.closeBtn.Margin = new System.Windows.Forms.Padding(2);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(28, 24);
             this.closeBtn.TabIndex = 2;
@@ -100,7 +103,7 @@ namespace Library_management.forms.Book
             this.txtIDBook.Enabled = false;
             this.txtIDBook.ForeColor = System.Drawing.Color.Silver;
             this.txtIDBook.Location = new System.Drawing.Point(406, 246);
-            this.txtIDBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIDBook.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDBook.Name = "txtIDBook";
             this.txtIDBook.Size = new System.Drawing.Size(122, 13);
             this.txtIDBook.TabIndex = 2;
@@ -113,7 +116,7 @@ namespace Library_management.forms.Book
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(399, 265);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(139, 2);
             this.panel2.TabIndex = 3;
@@ -122,7 +125,7 @@ namespace Library_management.forms.Book
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(399, 289);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(139, 2);
             this.panel3.TabIndex = 5;
@@ -133,7 +136,7 @@ namespace Library_management.forms.Book
             this.txtNameBook.Enabled = false;
             this.txtNameBook.ForeColor = System.Drawing.Color.Silver;
             this.txtNameBook.Location = new System.Drawing.Point(406, 271);
-            this.txtNameBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNameBook.Margin = new System.Windows.Forms.Padding(2);
             this.txtNameBook.Name = "txtNameBook";
             this.txtNameBook.Size = new System.Drawing.Size(122, 13);
             this.txtNameBook.TabIndex = 4;
@@ -145,7 +148,7 @@ namespace Library_management.forms.Book
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(433, 175);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -163,7 +166,7 @@ namespace Library_management.forms.Book
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("CANCEL", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel1.ForeColor = System.Drawing.Color.SeaShell;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(324, 440);
-            this.windowsUIButtonPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.windowsUIButtonPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.Size = new System.Drawing.Size(299, 62);
             this.windowsUIButtonPanel1.TabIndex = 10;
@@ -184,7 +187,7 @@ namespace Library_management.forms.Book
             // 
             this.ckDamage.AutoSize = true;
             this.ckDamage.Location = new System.Drawing.Point(413, 308);
-            this.ckDamage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ckDamage.Margin = new System.Windows.Forms.Padding(2);
             this.ckDamage.Name = "ckDamage";
             this.ckDamage.Size = new System.Drawing.Size(94, 17);
             this.ckDamage.TabIndex = 12;
@@ -195,7 +198,7 @@ namespace Library_management.forms.Book
             // 
             this.ckLost.AutoSize = true;
             this.ckLost.Location = new System.Drawing.Point(413, 331);
-            this.ckLost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ckLost.Margin = new System.Windows.Forms.Padding(2);
             this.ckLost.Name = "ckLost";
             this.ckLost.Size = new System.Drawing.Size(74, 17);
             this.ckLost.TabIndex = 13;
@@ -204,6 +207,9 @@ namespace Library_management.forms.Book
             // 
             // gvReturn
             // 
+            this.gvReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gvReturn.Location = new System.Drawing.Point(13, 133);
             this.gvReturn.MainView = this.gridView1;
             this.gvReturn.Name = "gvReturn";
@@ -302,7 +308,7 @@ namespace Library_management.forms.Book
             this.Controls.Add(this.windowsUIButtonPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "processReturnBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "processReturnBook";

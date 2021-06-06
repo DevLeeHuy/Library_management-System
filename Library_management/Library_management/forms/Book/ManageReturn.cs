@@ -96,6 +96,7 @@ namespace Library_management.forms.Book
                 }
                 if (returnDB.insert(u.id, b.id, exp > 0, cbLost.Checked) && borrowDB.delete(u.id, b.id))
                 {
+                    bookDB.updateQuantity(b.id, 1);
                     MessageBox.Show("Successfully return", " Return Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -131,6 +132,8 @@ namespace Library_management.forms.Book
                     {
                         if (!borrowDB.delete(u.id, (int)br.bid))
                         {
+                            bookDB.updateQuantity((int)br.bid, 1);
+
                             MessageBox.Show("Return book id: " + br.bid + " failed", "Return Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
@@ -147,11 +150,15 @@ namespace Library_management.forms.Book
 
         private void txtBookID_TextChanged(object sender, EventArgs e)
         {
-            b = bookDB.getById(Convert.ToInt32(txtBookID.Text));
-            txtTitle.Text = b.title;
-            borrow br = borrowDB.getDate(u.id, b.id);
-            dtpBorrowDate.Value = (DateTime)br.borrowDate;
-            dtpReturnDate.Value = (DateTime)br.expired;
+            try
+            {
+                b = bookDB.getById(Convert.ToInt32(txtBookID.Text));
+                txtTitle.Text = b.title;
+                borrow br = borrowDB.getDate(u.id, b.id);
+                dtpBorrowDate.Value = (DateTime)br.borrowDate;
+                dtpReturnDate.Value = (DateTime)br.expired;
+            }
+            catch { }
         }
 
         private void button1_Click(object sender, EventArgs e)

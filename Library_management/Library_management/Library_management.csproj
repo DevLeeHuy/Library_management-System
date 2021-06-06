@@ -452,6 +452,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>library.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClassDiagram1.cd" />
     <None Include="library.edmx.diagram">
       <DependentUpon>library.edmx</DependentUpon>
     </None>

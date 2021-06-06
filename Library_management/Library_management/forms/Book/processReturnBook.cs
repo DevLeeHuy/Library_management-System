@@ -70,11 +70,14 @@ namespace Library_management.forms.Book
 
         private void txtIDBook_TextChanged(object sender, EventArgs e)
         {
-            
+            try
+            {
                 List<returnBook> rtBook = returnDB.getListPending();
                 returnBook temp = rtBook.Where(r => r.bid == Convert.ToInt32(txtIDBook.Text)).SingleOrDefault();
                 txtNameBook.Text = temp.book.title;
                 ckLost.Checked = (bool)temp.isLost;
+            }
+            catch { }
         }
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)

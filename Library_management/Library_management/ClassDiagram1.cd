@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Library_management.config.Globals" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>config\Globals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Admin.attendance" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAACAQAAAAAACAAAACAAAAACAAgAAAAAAAAAA=</HashCode>
+      <FileName>forms\Admin\attendance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Admin.CheckIn" Collapsed="true">
+    <Position X="2.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAgASAQADAAAIiAAAADIAAAAAAgAAQAAQAAAAA=</HashCode>
+      <FileName>forms\Admin\CheckIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Admin.mainFrmAdmin" Collapsed="true">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCAIhRAAGIEAZAEAAiARhACAAAOAACgQkIgCShAAQE=</HashCode>
+      <FileName>forms\Admin\mainFrmAdmin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Book.Category" Collapsed="true">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAABAAECAIYDAAAIiAAAACAQAIAABAAEAYBQCCAAA=</HashCode>
+      <FileName>forms\Book\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Book.ManageBook" Collapsed="true">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAgAA0CiAIBAAAAyAACAiQQAcUAAgBEAAAQARIAI=</HashCode>
+      <FileName>forms\Book\ManageBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Book.ManageBorrow" Collapsed="true">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQ4AAFSAGCCCADQAAEjAAAACABAIAAAABEIAQQICAAQ=</HashCode>
+      <FileName>forms\Book\ManageBorrow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Book.ManageReturn" Collapsed="true">
+    <Position X="5.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQoBABCAUCAAADAAAAjIAAACABAIAACABUIgIRICAAY=</HashCode>
+      <FileName>forms\Book\ManageReturn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Book.processReturnBook" Collapsed="true">
+    <Position X="7" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAACCEACAAAhAAAAigAwACAEIAAAAkYQAAAQBAAAA=</HashCode>
+      <FileName>forms\Book\processReturnBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Book.topList" Collapsed="true">
+    <Position X="8.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJAAADAECCAgABAAAIDAACACAAiIBADAJgIAQQAKAAE=</HashCode>
+      <FileName>forms\Book\topList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Chart.ChartBook" Collapsed="true">
+    <Position X="5.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAEgAQCAAAAAAAACAAAACAAAIAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>forms\Chart\ChartBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Chart.ChartBorrowAnReturn" Collapsed="true">
+    <Position X="7" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQCAAACAAAACAAAACAAAIAAAAAAAAAUAAAAA=</HashCode>
+      <FileName>forms\Chart\ChartBorrowAnReturn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Chart.ChartReturnBooks" Collapsed="true">
+    <Position X="8.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEkAQCAAAAAAQACAAAACAAAIAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>forms\Chart\ChartReturnBooks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Chart.ChartStaff" Collapsed="true">
+    <Position X="5.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAEgAQCAAAAQAAACAAAACAAAIAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>forms\Chart\ChartStaff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Chart.ChartStudent" Collapsed="true">
+    <Position X="7" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>8AAsAIAASCABEBQKAAKQAAAiAICIAAAEQGAACSAnAAA=</HashCode>
+      <FileName>forms\Chart\ChartStudent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Chart.ChartTeacher" Collapsed="true">
+    <Position X="8.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEgAQCAAAQAAAACAQAACAAAIAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>forms\Chart\ChartTeacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Schedule.frmSchedule" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAEAaAASARABCAIQiAAIACYAAAAAAgAAAAAQAACAA=</HashCode>
+      <FileName>forms\Schedule\frmSchedule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Schedule.Schedule" Collapsed="true">
+    <Position X="2.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAEBAAAAAQABACAAAACAAAAAAACAAA=</HashCode>
+      <FileName>forms\Schedule\Schedule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Schedule.Shift" Collapsed="true">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAQAA=</HashCode>
+      <FileName>forms\Schedule\Shift.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Schedule.viewSchedule" Collapsed="true">
+    <Position X="2.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQQABICACAQEBAAAACAACAGIAAIIAAAAAAAAIAAAAA=</HashCode>
+      <FileName>forms\Schedule\viewSchedule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Student.mainFrmStudent" Collapsed="true">
+    <Position X="12" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAhBAACAAABBAAAiAAhACAAAIAAAgAmIECSAAAAE=</HashCode>
+      <FileName>forms\Student\mainFrmStudent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Student.ManageStd" Collapsed="true">
+    <Position X="13.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAUFAlQAACACABEFAAzAIBACAQAIIIAgEEAkAQKCAAA=</HashCode>
+      <FileName>forms\Student\ManageStd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Teacher.mainFrmTeacher" Collapsed="true">
+    <Position X="12" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAhBAAiAAABAAAAiAAhACAAAIAAAgAGIACSBAAAE=</HashCode>
+      <FileName>forms\Teacher\mainFrmTeacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Teacher.ManageTeacher" Collapsed="true">
+    <Position X="13.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAUFAlQAACACABEFAAzBIBACAQAMIIAgEEIkAQCCCAA=</HashCode>
+      <FileName>forms\Teacher\ManageTeacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.forms.Teacher.TeacherBook" Collapsed="true">
+    <Position X="15.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACCAAAAAAACAAAACAQAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>forms\Teacher\TeacherBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.models.bookDB" Collapsed="true">
+    <Position X="5.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAQBQAAACBASAAQBAAAAgAAABAQAAggAEAAA=</HashCode>
+      <FileName>models\bookDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.models.borrowDB" Collapsed="true">
+    <Position X="7" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAABQAAAAAAAAAQAAAAAAAAAAgAAAggAEAAA=</HashCode>
+      <FileName>models\borrowDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.models.categoryDB" Collapsed="true">
+    <Position X="8.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABQAAAAAAAAAQIAAAAAAAAAAAAAAgAEAAA=</HashCode>
+      <FileName>models\categoryDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.models.fineDB" Collapsed="true">
+    <Position X="5.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABQAAAAAAAAAAAAAAAAQAAABAAAggAEAAA=</HashCode>
+      <FileName>models\fineDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.models.returnDB" Collapsed="true">
+    <Position X="7" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABQAAAAAAAAABAAAAAAAAAAgAQAAgAAAAA=</HashCode>
+      <FileName>models\returnDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.models.staffDB" Collapsed="true">
+    <Position X="8.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgAAEAAAABQAAAAAACACQAAAAAAAAAAAAAAggAEAAA=</HashCode>
+      <FileName>models\staffDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.models.studentDB" Collapsed="true">
+    <Position X="5.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAQAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\studentDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.models.teacherDB" Collapsed="true">
+    <Position X="7" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAQAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\teacherDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.models.userDB" Collapsed="true">
+    <Position X="8.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAIAAQAQEAgAAAAAAAAAAAAAAAIAAAQAggEAAAQ=</HashCode>
+      <FileName>models\userDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.Report.Book_List" Collapsed="true">
+    <Position X="11.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCAQBAAAiTAAAAKIBgiAABBCAAAAAAAQIAAAAAAACAQ=</HashCode>
+      <FileName>Report\Book_List.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.Report.User_list" Collapsed="true">
+    <Position X="13.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FGAQBgAAiTAAAIKIBgiAEBBCgAAAAAAQIAAAAAAACAQ=</HashCode>
+      <FileName>Report\User_list.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.account" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAgAAAwA=</HashCode>
+      <FileName>account.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.book" Collapsed="true">
+    <Position X="5.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAICQQAAEAAAIAAIAIgAAAAAAACAAAAAAAAAAgA=</HashCode>
+      <FileName>book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.bookCategory" Collapsed="true">
+    <Position X="7" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAACAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>bookCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.bookOfTeacher" Collapsed="true">
+    <Position X="8.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIIAAAAAAAQAAAAAAAAACAAAAAAAAAAwA=</HashCode>
+      <FileName>bookOfTeacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.borrow" Collapsed="true">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIEAABAAAAQAAAAAEAAAAAAAAAAAAAAwA=</HashCode>
+      <FileName>borrow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.fineMoney" Collapsed="true">
+    <Position X="7" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAwA=</HashCode>
+      <FileName>fineMoney.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.frmLogin" Collapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABhAEVAgMCAAAjAAAACgAAADIBgACAAAQBEAgSBAAAE=</HashCode>
+      <FileName>forms\frmLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.frmRegister" Collapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBhAgViAICAAAFAAAgCAABADAAAIAAAAAFUAgSBBAAA=</HashCode>
+      <FileName>forms\frmRegister.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.ManageStaff" Collapsed="true">
+    <Position X="12" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAVFgkQBQKAKAAEhgAyhIAACAAAAMAAiQQAggQGCBAA=</HashCode>
+      <FileName>forms\Admin\Manage Staff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.returnBook" Collapsed="true">
+    <Position X="8.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAIGAAAAAAAQBAAAAAAAAAAAAAAAAAAAyA=</HashCode>
+      <FileName>returnBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.shift" Collapsed="true">
+    <Position X="15.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAAAAAAQAAAAAIAAAAAAAAAQAAAAAAAAAAgA=</HashCode>
+      <FileName>shift.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.staff" Collapsed="true">
+    <Position X="13.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAABAAIAAAAAAEAAAAAAAAAwA=</HashCode>
+      <FileName>staff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Library_management.user" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAIAARAAFAAAAAAAoAQAAAIBAAAgAAgAQAAAAgA=</HashCode>
+      <FileName>user.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

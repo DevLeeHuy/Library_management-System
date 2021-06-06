@@ -88,7 +88,7 @@ namespace Library_management.forms.Admin
                                 status = "late";
                             }
                         updateStatus(sh, status);
-                        MessageBox.Show("Đã ghi nhận ", "Chấm công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đã ghi nhận: " + status, "Chấm công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                         MessageBox.Show("Sai code ", "Chấm công", MessageBoxButtons.OK, MessageBoxIcon.Error);

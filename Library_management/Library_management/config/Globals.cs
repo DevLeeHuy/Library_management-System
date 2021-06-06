@@ -12,6 +12,7 @@ namespace Library_management.config
         static Globals() { }
 
         public static int user { get; private set; }
+        public static LibraryEntities db = new LibraryEntities();
 
         public static void setUser(int user)
         {

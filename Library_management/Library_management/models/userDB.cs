@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library_management.config;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Library_management.models
 {
     class userDB
     {
-        static LibraryEntities db = new LibraryEntities();
+        static LibraryEntities db = Globals.db;
         public static int staffType = 4;
         public static int stdType = 3;
         public static int teacherType = 2;
